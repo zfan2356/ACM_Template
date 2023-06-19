@@ -1,0 +1,3 @@
+"D:\mypile\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\abc250E.dir/objects.a
+D:\mypile\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\abc250E.dir/objects.a @CMakeFiles\abc250E.dir\objects1.rsp
+D:\mypile\CLION2~1.1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\abc250E.dir/objects.a -Wl,--no-whole-archive -o abc250E.exe -Wl,--out-implib,libabc250E.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\abc250E.dir\linklibs.rsp
