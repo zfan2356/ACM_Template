@@ -2,7 +2,7 @@
 template <typename T>
 struct Fenwick {
     int n;
-    std::vector<T> a;   //下标从0开始
+    std::vector<T> a;
 
     Fenwick(int n = 0) {
         init(n);
@@ -17,13 +17,15 @@ struct Fenwick {
         a.assign(n, T());
     }
 
-    void init(vector<T> &b) {   //根据b O(n) 建树
+    void init(vector<T> &b) {
         this->n = b.size();
         a.assign(n, T());
         for (int i = 1; i <= n; i++) {
             a[i - 1] += b[i - 1];
             int j = i + (i & -i);
-            if (j <= n) a[j - 1] += a[i - 1];
+            if (j <= n) {
+                a[j - 1] += a[i - 1];
+            }
         }
     }
 
@@ -33,7 +35,7 @@ struct Fenwick {
         }
     }
 
-    T sum(int x) {      //求[0, x)的前缀和
+    T sum(int x) {
         auto ans = T();
         for (int i = x; i > 0; i -= i & -i) {
             ans += a[i - 1];
@@ -41,7 +43,7 @@ struct Fenwick {
         return ans;
     }
 
-    T rangeSum(int l, int r) {  //求[l, r)的区间和
+    T rangeSum(int l, int r) {
         return sum(r) - sum(l);
     }
 
