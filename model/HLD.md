@@ -9,6 +9,7 @@ struct HLD {
     HLD(int n) {
         init(n);
     }
+    
     void init(int n) {
         this->n = n;
         siz.resize(n);
@@ -21,10 +22,12 @@ struct HLD {
         cur = 0;
         adj.assign(n, {});
     }
+    
     void addEdge(int u, int v) {
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
+    
     void work(int root = 0) {
         top[root] = root;
         dep[root] = 0;
@@ -32,6 +35,7 @@ struct HLD {
         dfs1(root);
         dfs2(root);
     }
+    
     void dfs1(int u) {
         if (parent[u] != -1) {
             adj[u].erase(std::find(adj[u].begin(), adj[u].end(), parent[u]));
@@ -48,6 +52,7 @@ struct HLD {
             }
         }
     }
+    
     void dfs2(int u) {
         in[u] = cur++;
         seq[in[u]] = u;
@@ -57,6 +62,7 @@ struct HLD {
         }
         out[u] = cur;
     }
+    
     int lca(int u, int v) {
         while (top[u] != top[v]) {
             if (dep[top[u]] > dep[top[v]]) {
