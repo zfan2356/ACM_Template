@@ -111,5 +111,22 @@ Min operator+(Min a, Min b) {
     return {std::min(a.x, b.x)};
 }
 
-SegmentTree<Min> seg(n);
+//SegmentTree<Min> seg(n / vector<Min>);
+```
+
+#### 注意
+1.模板的区间询问为左闭右开[a, b)
+2.后面的方法为线段树上二分, 传入一个函数参数F来进行线段树上二分
+注意, 最大值Max线段树可以寻找第一个大于(等于)某个数以及最后一个大于(等于)某个数的位置
+传入参数为
+```c++
+auto f = [&](int x) {
+    return x >= VALUE;
+};
+```
+同理, 如果想找第一个小于等于某个数为位置或者最后一个, 传入参数为
+```c++
+auto f = [&](int x) {
+    return x <= VALUEl;
+};
 ```
