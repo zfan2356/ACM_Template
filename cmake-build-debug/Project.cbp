@@ -11,10 +11,54 @@
 				<Option working_dir="D:/mypile/acm/ICPC/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ABC163F">
+				<Option output="D:/mypile/acm/ICPC/cmake-build-debug/ABC163F.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 ABC163F"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ABC163F/fast">
+				<Option output="D:/mypile/acm/ICPC/cmake-build-debug/ABC163F.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 ABC163F/fast"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="abc250E">
@@ -24,19 +68,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 abc250E"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 abc250E"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="abc250E/fast">
@@ -46,19 +90,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 abc250E/fast"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 abc250E/fast"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="abc265F">
@@ -68,19 +112,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 abc265F"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 abc265F"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="abc265F/fast">
@@ -90,19 +134,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 abc265F/fast"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 abc265F/fast"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="cf873B2">
@@ -112,19 +156,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 cf873B2"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 cf873B2"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="cf873B2/fast">
@@ -134,19 +178,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 cf873B2/fast"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 cf873B2/fast"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="cfeduD">
@@ -156,19 +200,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 cfeduD"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 cfeduD"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="cfeduD/fast">
@@ -178,19 +222,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 cfeduD/fast"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 cfeduD/fast"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="A">
@@ -200,19 +244,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 A"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 A"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="A/fast">
@@ -222,19 +266,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 A/fast"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 A/fast"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="B">
@@ -244,19 +288,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 B"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 B"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="B/fast">
@@ -266,19 +310,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 B/fast"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 B/fast"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="C">
@@ -288,19 +332,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 C"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 C"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="C/fast">
@@ -310,19 +354,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 C/fast"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 C/fast"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TEST">
@@ -332,19 +376,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 TEST"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 TEST"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TEST/fast">
@@ -354,19 +398,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 TEST/fast"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 TEST/fast"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CMakeCXXCompilerId">
@@ -376,19 +420,19 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMakeCXXCompilerId"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMakeCXXCompilerId"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CMakeCXXCompilerId/fast">
@@ -398,42 +442,45 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="D:/mypile/CLion 2022.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/mypile/CLion 2023.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMakeCXXCompilerId/fast"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMakeCXXCompilerId/fast"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="D:/mypile/acm/ICPC/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="D:/mypile/acm/ICPC/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mypile/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mypile/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;D:/mypile/acm/ICPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/mypile/acm/ICPC/Atcoder/ABC163F.cpp">
+			<Option target="ABC163F"/>
+		</Unit>
 		<Unit filename="D:/mypile/acm/ICPC/Atcoder/abc250E.cpp">
 			<Option target="abc250E"/>
 		</Unit>
@@ -458,7 +505,7 @@
 		<Unit filename="D:/mypile/acm/ICPC/DailyTraining/TEST.cpp">
 			<Option target="TEST"/>
 		</Unit>
-		<Unit filename="D:/mypile/acm/ICPC/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.cpp">
+		<Unit filename="D:/mypile/acm/ICPC/cmake-build-debug/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.cpp">
 			<Option target="CMakeCXXCompilerId"/>
 		</Unit>
 		<Unit filename="D:/mypile/acm/ICPC/CMakeLists.txt">

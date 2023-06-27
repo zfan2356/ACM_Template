@@ -25,33 +25,61 @@ inline std::ostream &operator<<(std::ostream &out, const std::set <T> &a) {
 
 #define DEBUG
 
-void solve() {
-    string l, r;
-    cin >> l >> r;
-    reverse(l.begin(), l.end());
-    reverse(r.begin(), r.end());
-    while (l.size() < r.size()) l += '0';
-    auto get = [&](string a, string b) {
-        int ans = 0;
-        for (int i = 0; i < a.size(); i++) {
-            ans += abs(a[i] - b[i]);
-        }
-        return ans;
-    };
-    int res = get(l, r);
+struct EulerFunction {
+    vector<int> phi, primes;
+    vector<bool> vis;
 
-    for (int i = r.size() - 1; i >= 0; i--) {
-        if (l[i] == r[i]) {
-            continue;
-        }
-        int ans = r[i] - l[i];
-        for (int j = i - 1; j >= 0; j--) {
-            ans += 9;
-        }
-        res = max(res, ans);
-        break;
+    EulerFunction() {}
+    EulerFunction(int n) {
+        init(n);
     }
-    cout << res << '\n';
+
+    void init(int n) {
+        phi.resize(n + 1);
+        vis.resize(n + 1);
+        phi[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            if (!vis[i]) {
+                primes.push_back(i);
+                phi[i] = i - 1;
+            }
+            for (int j = 0; primes[j] * i <= n; j++) {
+                vis[primes[j] * i] = true;
+                if (i % primes[j] == 0) {
+                    phi[i * primes[j]] = phi[i] * primes[j];
+                    break;
+                }
+                phi[i * primes[j]] = phi[i] * (primes[j] - 1);
+            }
+        }
+    }
+
+    int getEuler(int x) {
+        return phi[x];
+    }
+};
+
+void solve() {
+    int n;
+    cin >> n;
+
+    vector<int> phi(n), primes;
+    vector<bool> vis(n);
+    phi[1] = 1;
+    for (int i = 2; i < n; i++) {
+        if (!vis[i]) {
+            primes.push_back(i);
+            phi[i] = i - 1;
+        }
+        for (int j = 0; primes[j] * i < n; j++) {
+            vis[primes[j] * i] = true;
+            if (i % primes[j] == 0) {
+                phi[i * primes[j]] = phi[i] * primes[j];
+                break;
+            }
+            phi[i * primes[j]] = phi[i] * (primes[j] - 1);
+        }
+    }
 
 }
 
@@ -64,8 +92,8 @@ signed main() {
     freopen("D:\\mypile\\acm\\ICPC\\out.txt", "w", stdout);
 #endif
 
-    int Case;
-    std::cin >> Case;
+
+    int Case = 1;
 
     while (Case--) {
         solve();

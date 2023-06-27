@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/mypile/acm/ICPC/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" "CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.obj" "gcc" "CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.obj.d"
+  "D:/mypile/acm/ICPC/cmake-build-debug/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" "CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.obj" "gcc" "CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.obj.d"
   )
 
 # Targets to which this target links.

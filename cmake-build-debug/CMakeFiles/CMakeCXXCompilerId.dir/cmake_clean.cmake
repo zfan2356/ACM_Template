@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeCXXCompilerId.exe"
   "CMakeCXXCompilerId.exe.manifest"
   "CMakeCXXCompilerId.pdb"
-  "CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.obj"
-  "CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.obj.d"
+  "CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.obj"
+  "CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.obj.d"
   "libCMakeCXXCompilerId.dll.a"
 )
 
