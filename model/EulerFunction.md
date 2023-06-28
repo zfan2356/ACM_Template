@@ -1,7 +1,7 @@
 ```c++
 struct EulerFunction {
-    vector<int> phi, primes;
-    vector<bool> vis;
+    std::vector<int> phi, primes;
+    std::vector<bool> vis;
 
     EulerFunction() {}
     EulerFunction(int n) {
@@ -49,5 +49,63 @@ auto getEuler = [&](int x) {
         res = res / x * (x - 1);
     }
     return res;
+};
+```
+
+## Euler降幂
+
+```c++
+std::vector<int> phi;
+auto getEuler = [&](int x) {
+    int res = x;
+    for (int i = 2; i <= x / i; i++) {
+        if (x % i == 0) {
+            res = res / i * (i - 1);
+            while (x % i == 0) {
+                x /= i;
+            }
+        }
+    }
+    if (x > 1) {
+        res = res / x * (x - 1);
+    }
+    return res;
+};
+
+phi.push_back(MOD);
+while (phi.back() != 1) {
+phi.push_back(getEuler(phi.back()));
+}
+auto EulerDrop = [&](int l, int r, int MOD) {
+    r = std::min(r, l - 1 + (int)phi.size());
+    ll res = 1;
+    bool ok = true;
+
+    auto qpow = [&](long long a, long long b, long long p) {
+        long long res = 1 % p;
+        for (; b; b >>= 1) {
+            if (b & 1) {
+                res = 1ll * res * a;
+                if (res >= p) {
+                    ok = true;
+                    res %= p;
+                }
+            }
+            a = 1ll * a * a;
+            if (a >= p) {
+                ok = true;
+                a %= p;
+            }
+        }
+        return res;
+    };
+    for (int i = r; i >= l; i--) {
+        ok = false;
+        res = qpow(a[i], res, phi[i - l]);
+        if (ok) {
+            res += phi[i - l];
+        }
+    }
+    return res % phi[0];
 };
 ```
