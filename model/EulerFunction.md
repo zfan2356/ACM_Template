@@ -74,8 +74,9 @@ auto getEuler = [&](int x) {
 
 phi.push_back(MOD);
 while (phi.back() != 1) {
-phi.push_back(getEuler(phi.back()));
+    phi.push_back(getEuler(phi.back()));
 }
+
 auto EulerDrop = [&](int l, int r, int MOD) {
     r = std::min(r, l - 1 + (int)phi.size());
     ll res = 1;
