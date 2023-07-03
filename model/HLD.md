@@ -124,4 +124,21 @@ struct HLD {
         return lca(a, b) ^ lca(b, c) ^ lca(c, a);
     }
 };
+
+auto get = [&](int u, int v) {  // 对路径
+    while (H.top[u] != H.top[v]) {
+        if (H.dep[H.top[u]] < H.dep[H.top[v]]) {
+            swap(u, v);
+        }
+        // 现在连续的路径为H.in[H.top[u]] -> H.in[u], 对其进行操作或者更新
+        u = H.parent[Hld.top[u]];
+    }
+
+    if (H.dep[u] < H.dep[v]) {
+        swap(u, v);
+    }
+    
+    // 最后的一段路径为H.in[v] -> H.in[u] + 1, 对其进行操作或者更新
+};
+
 ```
