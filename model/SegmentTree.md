@@ -81,6 +81,7 @@ struct SegmentTree {
     int findFirst(int l, int r, F pred) {
         return findFirst(1, 0, n, l, r, pred);
     }
+    
     template<class F>
     int findLast(int p, int l, int r, int x, int y, F pred) {
         if (l >= y || r <= x || !pred(info[p])) {
@@ -143,6 +144,6 @@ auto f = [&](int x) {
 同理, 如果想找第一个小于等于某个数为位置或者最后一个, 传入参数为
 ```c++
 auto f = [&](int x) {
-    return x <= VALUEl;
+    return x <= VALUE;
 };
 ```
