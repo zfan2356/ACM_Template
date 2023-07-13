@@ -45,7 +45,7 @@ T MUL(T a, T b, T mod) {
 }
 
 template<typename T>
-T ExCRT(int N, vector<T>& A, vector<T>& M) {   // x = A_i (mod M_i)
+T ExCRT(int N, std::vector<T>& A, std::vector<T>& M) {   // x = A_i (mod M_i)
     auto MOD = [&](T a, T b) {
         return ((a % b) + b) % b;
     };

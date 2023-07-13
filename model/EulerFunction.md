@@ -1,3 +1,4 @@
+#### 线性筛欧拉函数
 ```c++
 struct EulerFunction {
     std::vector<int> phi, primes;
@@ -5,19 +6,19 @@ struct EulerFunction {
 
     EulerFunction() {}
     EulerFunction(int n) {
-        init(n);
+        _init(n);
     }
 
-    void init(int n) {
-        phi.resize(n + 1);
-        vis.resize(n + 1);
+    void _init(int N) {
+        phi.resize(N + 1);
+        vis.resize(N + 1);
         phi[1] = 1;
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i <= N; i++) {
             if (!vis[i]) {
                 primes.push_back(i);
                 phi[i] = i - 1;
             }
-            for (int j = 0; primes[j] * i <= n; j++) {
+            for (int j = 0; primes[j] * i <= N; j++) {
                 vis[primes[j] * i] = true;
                 if (i % primes[j] == 0) {
                     phi[i * primes[j]] = phi[i] * primes[j];
@@ -34,6 +35,7 @@ struct EulerFunction {
 };
 ```
 
+#### 求单个欧拉函数
 ```c++
 auto getEuler = [&](int x) {
     int res = x;
@@ -52,7 +54,7 @@ auto getEuler = [&](int x) {
 };
 ```
 
-## Euler降幂
+#### Euler降幂
 
 ```c++
 std::vector<int> phi;
