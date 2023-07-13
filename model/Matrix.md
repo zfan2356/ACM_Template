@@ -1,5 +1,4 @@
 ```c++
-const int mod = 1e9 + 7;
 template<typename T>
 struct Matrix {
     int m, n;
@@ -20,6 +19,8 @@ struct Matrix {
         }
     }
 
+    Matrix(const Matrix& other) : m(other.m), n(other.n), data(other.data) {}
+
     Matrix operator+(const Matrix &b) const {
         if (m != b.m || n != b.n) {
             return Matrix();
@@ -32,6 +33,19 @@ struct Matrix {
         }
         return ans;
     }
+
+    Matrix operator=(const Matrix& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        m = other.m;
+        n = other.n;
+        data = other.data;
+
+        return *this;
+    }
+
 
     Matrix operator-(const Matrix &b) const {
         if (m != b.m || n != b.n) {
@@ -81,7 +95,7 @@ struct Matrix {
         return ans;
     }
 
-    vector<int> &operator[](int rank) {
+    vector<T> &operator[](int rank) {
         return data[rank];
     }
 
@@ -143,7 +157,7 @@ struct Matrix {
         return res;
     }
 
-    friend Matrix qpow(Matrix a, int b) {
+    friend Matrix qpow(Matrix &a, T b) {
         if (a.m != a.n) {
             return Matrix();
         }
@@ -203,5 +217,4 @@ struct Matrix {
         return false;
     }
 };
-
 ```
