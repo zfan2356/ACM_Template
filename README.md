@@ -21,7 +21,7 @@
 #### [扩展欧几里得算法Exgcd](https://github.com/zfan2356/ICPC/blob/94943f0dd09bc3be8b072e3cf9518ebd6f4f1fc8/model/Exgcd.md)
 #### [线性基LinearBasis](https://github.com/zfan2356/ICPC/blob/94943f0dd09bc3be8b072e3cf9518ebd6f4f1fc8/model/LinearBasis.md)
 #### [计算几何Geometry](https://github.com/zfan2356/ICPC/blob/94943f0dd09bc3be8b072e3cf9518ebd6f4f1fc8/model/Geometry.md)
-
+#### [扩展中国剩余定理ExCRT](https://github.com/zfan2356/ICPC/blob/d8e594c9a07ca09d72f3734ca9aac5857d97f0f0/model/ExCRT.md)
 
 ### 图论
 
