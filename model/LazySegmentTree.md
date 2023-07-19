@@ -141,7 +141,7 @@ struct LazySegmentTree {
 };
  
 struct Tag {
-    i64 add = 0;
+    long long add = 0;
     
     void apply(Tag t) {
         add += t.add;
@@ -149,7 +149,7 @@ struct Tag {
 };
  
 struct Info {
-    i64 mn = 1E18;
+    long long mn = 1E18;
     
     void apply(Tag t) {
         mn += t.add;
@@ -159,4 +159,72 @@ struct Info {
 Info operator+(Info a, Info b) {
     return {std::min(a.mn, b.mn)};
 }
+```
+
+#### 区间历史最值
+
+```c++
+struct Tag {
+    ll t1 = 0, t2 = 0;
+    ll s1 = INT_MIN, s2 = INT_MIN;
+
+    void apply_t(Tag t) {
+        if (s1 == INT_MIN) {
+            t2 = max(t2, t1 + t.t2);
+            t1 += t.t1;
+        } else {
+            s2 = max(s2, s1 + t.t2);
+            s1 += t.t1;
+        }
+    }
+
+    void apply_s(Tag t) {
+        s2 = max(s2, t.s2);
+        s1 = t.s1;
+    }
+
+    void apply(Tag t) {
+        apply_t(t);
+        if (t.s1 != INT_MIN || t.s2 != INT_MIN) {
+            apply_s(t);
+        }
+    }
+};
+
+
+struct Info {
+    ll a1 = 0;  //区间最大值
+    ll a2 = 0;  //区间历史最大值
+    void apply(Tag t) {
+        a2 = max(a2, a1 + t.t2);
+        a1 += t.t1;
+        if (t.s1 != INT_MIN || t.s2 != INT_MIN) {
+            a2 = max(a2, t.s2);
+            a1 = t.s1;
+        }
+    }
+};
+
+Info operator+(Info a, Info b) {
+    return {max(a.a1, b.a1), max(a.a2, b.a2)};
+}
+
+for (int i = 0; i < m; i++) {
+    int op, l, r;
+    ll x;
+    cin >> op >> l >> r;
+    l--;
+    if (op == 1) {  //区间最大值
+        cout << lazySegmentTree.rangeQuery(l, r).a1 << endl;
+    } else if (op == 2){    //区间历史最大值
+        cout << lazySegmentTree.rangeQuery(l, r).a2 << endl;
+    } else if (op == 3) {   //区间加
+        cin >> x;
+        lazySegmentTree.rangeApply(l, r, {x, x, INT_MIN, INT_MIN});
+    } else {        //区间赋值
+        cin >> x;
+        lazySegmentTree.rangeApply(l, r, {0, 0, x, x});
+    }
+}
+
 ```
