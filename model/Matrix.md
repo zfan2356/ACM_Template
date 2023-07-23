@@ -28,7 +28,7 @@ struct Matrix {
         Matrix ans(m, n);
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                ans.data[i][j] = (data[i][j] + b.data[i][j]) % mod;
+                ans.data[i][j] = data[i][j] + b.data[i][j];
             }
         }
         return ans;
@@ -54,7 +54,7 @@ struct Matrix {
         Matrix ans(m, n);
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                ans.data[i][j] = (data[i][j] - b.data[i][j]) % mod;
+                ans.data[i][j] = data[i][j] - b.data[i][j];
             }
         }
         return ans;
@@ -64,7 +64,7 @@ struct Matrix {
         Matrix ans(m, n);
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                ans.data[i][j] = (data[i][j] * b) % mod;
+                ans.data[i][j] = data[i][j] * b;
             }
         }
         return ans;
@@ -78,18 +78,8 @@ struct Matrix {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < b.n; j++) {
                 for (int k = 0; k < n; k++) {
-                    ans.data[i][j] = (ans.data[i][j] + data[i][k] * b.data[k][j] % mod) % mod;
+                    ans.data[i][j] += data[i][k] * b.data[k][j];
                 }
-            }
-        }
-        return ans;
-    }
-
-    Matrix operator%(const T &b) const {
-        Matrix ans(m, n);
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                ans.data[i][j] = data[i][j] % b;
             }
         }
         return ans;
@@ -103,7 +93,7 @@ struct Matrix {
         T ans = 0;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                ans = (ans + data[i][j]) % mod;
+                ans += data[i][j];
             }
         }
         return ans;
@@ -113,48 +103,10 @@ struct Matrix {
         T ans = 1;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                ans = ans * data[i][j] % mod;
+                ans *= data[i][j];
             }
         }
         return ans;
-    }
-
-
-    Matrix Inv() {
-        Matrix res(n), a = *this;
-        for (int i = 0, r; i < n; ++i) {
-            r = i;
-            for (int j = i + 1; j < n; ++j) {
-                if (a.data[j][i] > a.data[r][i]) {
-                    r = j;
-                }
-            }
-            swap(a.data[i], a.data[r]);
-            swap(res.data[i], res.data[r]);
-
-            if (!a.data[i][i]) {
-                return res.data[0][0] = -1, res;
-            }
-
-            T Invaii = qpow(a.data[i][i], mod - 2);
-            for (int k = 0; k < n; ++k) {
-                a.data[i][k] = a.data[i][k] * Invaii % mod;
-            }
-            for (int k = 0; k < n; ++k) {
-                res.data[i][k] = res.data[i][k] * Invaii % mod;
-            }
-            for (int j = 0; j < n; ++j)
-                if (j != i) {
-                    T tmp = a.data[j][i];
-                    for (int k = i; k < n; ++k) {
-                        a.data[j][k] = (a.data[j][k] - tmp * a.data[i][k] % mod + mod) % mod;
-                    }
-                    for (int k = 0; k < n; ++k) {
-                        res.data[j][k] = (res.data[j][k] - tmp * res.data[i][k] % mod + mod) % mod;
-                    }
-                }
-        }
-        return res;
     }
 
     friend Matrix qpow(Matrix &a, T b) {
@@ -217,4 +169,43 @@ struct Matrix {
         return false;
     }
 };
+```
+
+```c++
+Matrix Inv(Matrix& a) {
+    Matrix res(n);
+    for (int i = 0, r; i < n; ++i) {
+        r = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (a.data[j][i] > a.data[r][i]) {
+                r = j;
+            }
+        }
+        swap(a.data[i], a.data[r]);
+        swap(res.data[i], res.data[r]);
+
+        if (!a.data[i][i]) {
+            return res.data[0][0] = -1, res;
+        }
+
+        T Invaii = qpow(a.data[i][i], mod - 2);
+        for (int k = 0; k < n; ++k) {
+            a.data[i][k] = a.data[i][k] * Invaii % mod;
+        }
+        for (int k = 0; k < n; ++k) {
+            res.data[i][k] = res.data[i][k] * Invaii % mod;
+        }
+        for (int j = 0; j < n; ++j)
+            if (j != i) {
+                T tmp = a.data[j][i];
+                for (int k = i; k < n; ++k) {
+                    a.data[j][k] = (a.data[j][k] - tmp * a.data[i][k] % mod + mod) % mod;
+                }
+                for (int k = 0; k < n; ++k) {
+                    res.data[j][k] = (res.data[j][k] - tmp * res.data[i][k] % mod + mod) % mod;
+                }
+            }
+    }
+    return res;
+}
 ```

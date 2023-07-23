@@ -1,50 +1,13 @@
 ```c++
-#include <bits/stdc++.h>
-
-using namespace std;
-
-#define int long long
 #define fp(i, a, b) for (int i = (a), i##_ = (b) + 1; i < i##_; ++i)
 #define fd(i, a, b) for (int i = (a), i##_ = (b) - 1; i > i##_; --i)
 
-template<typename A, typename B>
-inline std::ostream &operator<<(std::ostream &out, const std::pair <A, B> &p) {
-    return out << "(" << p.first << ", " << p.second << ")";
-}
-
-template<typename T>
-inline std::ostream &operator<<(std::ostream &out, const std::vector <T> &a) {
-    out << "[";
-    for (int i = 0; i < a.size(); i++) {
-        if (i) out << ',';
-        out << ' ' << a[i];
-    }
-    return out << " ]";
-}
-
-template<typename T>
-inline std::ostream &operator<<(std::ostream &out, const std::set <T> &a) {
-    return out << std::vector<T>(all(a));
-}
-
-
-const int N = 5e4 + 10, P = 167772161;
+const int P = 167772161;
 using ll = int64_t;
 using Poly = vector<int>;
 using MultiPoly = vector<Poly>;
 
-//快读
-template <typename T>void read(T& x){
-    x = 0;
-    int f = 1;
-    char ch = getchar();
-    while (ch < '0' || ch > '9') { if (ch == '-')f = -1; ch = getchar(); }
-    while (ch >= '0' && ch <= '9') { x = x * 10 + ch - '0'; ch = getchar(); }
-    x *= f;
-}
-//二次剩余
-/*---------------------------------------------------------------------------*/
-class Cipolla {
+class Cipolla { //二次剩余
     int P, I2{};
     using pll = pair<ll, ll>;
 #define X first
@@ -87,7 +50,8 @@ public:
 #undef X
 #undef Y
 };
-/*---------------------------------------------------------------------------*/
+
+
 #define MUL(a, b) (ll(a) * (b) % P)
 #define ADD(a, b) (((a) += (b)) >= P ? (a) -= P : 0) // (a += b) %= P
 #define SUB(a, b) (((a) -= (b)) < 0 ? (a) += P: 0)  // ((a -= b) += P) %= P
@@ -112,7 +76,8 @@ int qpow(ll a, int b = P - 2, ll x = 1) {
     }
     return x;
 }
-/*---------------------------------------------------------------------------*/
+
+
 namespace NTT {
     const int g = 3;
     Poly Omega(int L) {
@@ -151,7 +116,8 @@ namespace NTT {
         reverse(a + 1, a + n);
     }
 }
-/*-----------------------------------------------------------*/
+
+
 namespace FWT {
     void FWTor(Poly& a, bool rev) {
         int n = a.size();
@@ -191,7 +157,8 @@ namespace FWT {
                 }
     }
 }
-/*---------------------------------------------------------------------------*/
+
+
 namespace Polynomial {
     // size确定以及NTT乘法
     int norm(int n) {
@@ -525,7 +492,5 @@ namespace Polynomial {
         return A;
     }
 }
-
-using namespace Polynomial;
 
 ```
