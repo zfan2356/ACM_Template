@@ -29,6 +29,7 @@
 #### [SPFA](https://github.com/zfan2356/ICPC/blob/94943f0dd09bc3be8b072e3cf9518ebd6f4f1fc8/model/SPFA.md)
 #### [树哈希TreeHash](https://github.com/zfan2356/ICPC/blob/94943f0dd09bc3be8b072e3cf9518ebd6f4f1fc8/model/TreeHash.md)
 #### [最近公共祖先LCA](https://github.com/zfan2356/ICPC/blob/94943f0dd09bc3be8b072e3cf9518ebd6f4f1fc8/model/Lca.md)
+#### [最大流](https://github.com/zfan2356/ICPC/blob/bb454e8b415e99700810dc8f481125a38ead1387/model/MaxFlow.md)
 
 ### 字符串
 
