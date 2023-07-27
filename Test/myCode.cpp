@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 
-using namespace std;
-using ll = long long;
+using std::cin;
+using std::cout;
+using std::endl;
+using i64 = long long;
 
 template<typename A, typename B>
 inline std::ostream &operator<<(std::ostream &out, const std::pair <A, B> &p) {
@@ -22,132 +24,6 @@ template<typename T>
 inline std::ostream &operator<<(std::ostream &out, const std::set <T> &a) {
     return out << std::vector<T>(all(a));
 }
-
-struct HLD {
-    int n;
-    std::vector<int> siz, top, dep, parent, in, out, seq;
-    std::vector<std::vector<int>> adj;
-    int cur;
-
-    HLD() {}
-    HLD(int n) {
-        init(n);
-    }
-
-    void init(int n) {
-        this->n = n;
-        siz.resize(n);
-        top.resize(n);
-        dep.resize(n);
-        parent.resize(n);
-        in.resize(n);
-        out.resize(n);
-        seq.resize(n);
-        cur = 0;
-        adj.assign(n, {});
-    }
-
-    void addEdge(int u, int v) {
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-
-    void work(int root = 0) {
-        top[root] = root;
-        dep[root] = 0;
-        parent[root] = -1;
-        dfs1(root);
-        dfs2(root);
-    }
-
-    void dfs1(int u) {
-        if (parent[u] != -1) {
-            adj[u].erase(std::find(adj[u].begin(), adj[u].end(), parent[u]));
-        }
-
-        siz[u] = 1;
-        for (auto &v : adj[u]) {
-            parent[v] = u;
-            dep[v] = dep[u] + 1;
-            dfs1(v);
-            siz[u] += siz[v];
-            if (siz[v] > siz[adj[u][0]]) {
-                std::swap(v, adj[u][0]);
-            }
-        }
-    }
-
-    void dfs2(int u) {
-        in[u] = cur++;
-        seq[in[u]] = u;
-        for (auto v : adj[u]) {
-            top[v] = v == adj[u][0] ? top[u] : v;
-            dfs2(v);
-        }
-        out[u] = cur;
-    }
-
-    int lca(int u, int v) {
-        while (top[u] != top[v]) {
-            if (dep[top[u]] > dep[top[v]]) {
-                u = parent[top[u]];
-            } else {
-                v = parent[top[v]];
-            }
-        }
-        return dep[u] < dep[v] ? u : v;
-    }
-
-    int dist(int u, int v) {
-        return dep[u] + dep[v] - 2 * dep[lca(u, v)];
-    }
-
-    int jump(int u, int k) {
-        if (dep[u] < k) {
-            return -1;
-        }
-
-        int d = dep[u] - k;
-
-        while (dep[top[u]] > d) {
-            u = parent[top[u]];
-        }
-
-        return seq[in[u] - dep[u] + d];
-    }
-
-    bool isAncester(int u, int v) {
-        return in[u] <= in[v] && in[v] < out[u];
-    }
-
-    int rootedParent(int u, int v) {
-        std::swap(u, v);
-        if (u == v) {
-            return u;
-        }
-        if (!isAncester(u, v)) {
-            return parent[u];
-        }
-        auto it = std::upper_bound(adj[u].begin(), adj[u].end(), v, [&](int x, int y) {
-            return in[x] < in[y];
-        }) - 1;
-        return *it;
-    }
-
-    int rootedSize(int u, int v) {
-        if (u == v) {
-            return n;
-        }
-        if (!isAncester(v, u)) {
-            return siz[v];
-        }
-        return n - siz[rootedParent(u, v)];
-    }
-
-    int rootedLca(int a, int b, int c) {
-        return lca(a, b) ^ lca(b, c) ^ lca(c, a);
-    }
-};
 
 template<class Info>
 struct SegmentTree {
@@ -231,6 +107,7 @@ struct SegmentTree {
     int findFirst(int l, int r, F pred) {
         return findFirst(1, 0, n, l, r, pred);
     }
+
     template<class F>
     int findLast(int p, int l, int r, int x, int y, F pred) {
         if (l >= y || r <= x || !pred(info[p])) {
@@ -252,124 +129,109 @@ struct SegmentTree {
     }
 };
 
-constexpr int inf = 1E9;
-struct Min {
-    int x = inf;
+struct Info {
+    int cnt = 0;
+    i64 sum = 0;
 };
 
-Min operator+(Min a, Min b) {
-    return {std::min(a.x, b.x)};
+Info operator+ (Info a, Info b) {
+    return {a.cnt + b.cnt, a.sum + b.sum};
 }
 
-struct Max {
-    int x = -inf;
-};
-
-Max operator+(Max a, Max b) {
-    return {std::max(a.x, b.x)};
-}
-
-struct Sum {
-    int x = 0;
-};
-
-Sum operator+(Sum a, Sum b) {
-    return {a.x + b.x};
-}
-
-
-
-//#define DEBUG
-
-struct PPP{
-    int x, y, u, v, i;
-};
-
-struct PP{
-    int u, v, c, w;
-};
+#define DEBUG
 
 void solve() {
-    int n, q;
-    cin >> n >> q;
-    HLD Hld(n);
-    vector<Sum> W(n);
-    vector<vector<int>> Color(n);
-    vector<PP> edge;
-
-    for (int i = 1; i < n; i++) {
-        int u, v, w, c;
-        cin >> u >> v >> c >> w;
-        u--, v--;
-        c--;
-        if (u > v) {
-            swap(u, v);
-        }
-        edge.push_back({u, v, c, w});
-        Hld.addEdge(u, v);
-        Color[c].push_back(v);
+    int n, q, s;
+    cin >> n >> q >> s;
+    std::vector<int> l(n), r(n);
+    std::vector<i64> d(n), a(n), b(n);
+    std::vector<i64> all;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i] >> b[i] >> l[i] >> r[i];
+        d[i] = b[i] - a[i];
+        all.push_back(d[i]);
     }
 
-    Hld.work(0);
-    for (auto [u, v, c, w] : edge) {
-        W[Hld.in[v]].x = w;
-    }
+    std::sort(all.begin(), all.end());
+    all.erase(std::unique(all.begin(), all.end()), all.end());
 
-
-    SegmentTree<Sum> seg1(W), seg2(n);
-    vector<PPP> Q(q);
-    vector<vector<int>> colorQ(n);
+    std::vector<std::vector<std::pair<int, int>>> query(n);
+    std::vector<i64> ans(q);
     for (int i = 0; i < q; i++) {
-        int x, y, u, v;
-        cin >> x >> y >> u >> v;
-        u--, v--;
+        int x, y;
+        cin >> x >> y;
         x--;
-        Q[i] = {x, y, u, v, i};
-        colorQ[x].push_back(i);
+        query[x].push_back({y, i});
     }
 
+    SegmentTree<Info> segmentTree(n);
+    int L = s, R = s;
+    bool ok = true;
+    i64 pre = 0;
 
-    auto get = [&](int u, int v, int y) {
-        int ans = 0;
-        while (Hld.top[u] != Hld.top[v]) {
-            if (Hld.dep[Hld.top[u]] < Hld.dep[Hld.top[v]]) {
-                swap(u, v);
-            }
-
-            ans += seg1.rangeQuery(Hld.in[Hld.top[u]], Hld.in[u] + 1).x;
-            ans += seg2.rangeQuery(Hld.in[Hld.top[u]], Hld.in[u] + 1).x * y;
-//            cout << u << ' ' << Hld.parent[Hld.top[u]] << endl;
-            u = Hld.parent[Hld.top[u]];
-        }
-
-        if (Hld.dep[u] < Hld.dep[v]) {
-            swap(u, v);
-        }
-
-//        cout << Hld.in[u] << ' ' << Hld.in[v] << endl;
-        ans += seg1.rangeQuery(Hld.in[v], Hld.in[u] + 1).x;
-        ans += seg2.rangeQuery(Hld.in[v], Hld.in[u] + 1).x * y;
-
-        ans -= seg1.rangeQuery(Hld.in[v], Hld.in[v] + 1).x + seg2.rangeQuery(Hld.in[v], Hld.in[v] + 1).x * y;
-        return ans;
+    auto delMin = [&]() {
+        auto f = [&](Info info) {
+            return info.cnt > 0;
+        };
+        int p = segmentTree.findFirst(0, n, f);
+        segmentTree.modify(p, {0, 0});
+        return all[p];
     };
 
-    vector<int> ans(q);
-    for (int i = 0; i < n - 1; i++) {
-        for (auto j : Color[i]) {
-            seg1.modify(Hld.in[j], {0});
-            seg2.modify(Hld.in[j], {1});
+    auto delMax = [&]() {
+        auto f = [&](Info info) {
+            return info.cnt > 0;
+        };
+        int p = segmentTree.findLast(0, n, f);
+        segmentTree.modify(p, {0, 0});
+    };
+
+    auto get = [&] (int l, int r) {
+        if (R < l || L > r) {
+            ok = false;
+            return ;
+        }
+        for (;  !(l <= L && L <= r); L += 2) {
+            pre += delMin();
+        }
+        for (; !(l <= R && R <= r); R -= 2) {
+            delMax();
+        }
+    };
+
+    auto Query = [&](int x) {
+        if (!ok || x < L || x > R || (x - L) & 1) {
+            return -1ll;
+        }
+        if (x == L) {
+            return pre;
         }
 
-        for (auto j : colorQ[i]) {
-            auto [x, y, u, v, id] = Q[j];
+        int p = segmentTree.findLast(0, n, [&](Info info) {
+            return info.cnt <= (x - L) / 2;
+        });
 
-            ans[id] = get(u, v, y);
+//        cout << "!!!" << p << endl;
+        auto info = segmentTree.rangeQuery(0, p + 1);
+        auto P = segmentTree.rangeQuery(p, p + 1);
+
+        i64 ans = info.sum;
+        if (info.cnt > (x - L) / 2) {
+            ans -= 1ll * (info.cnt - (x - L) / 2) * (P.sum / P.cnt);
         }
+        return ans + pre;
+    };
 
-        for (auto j : Color[i]) {
-            seg1.modify(Hld.in[j], {W[Hld.in[j]]});
-            seg2.modify(Hld.in[j], {0});
+    for (int i = 0; i < n; i++) {
+        if (ok) {
+            pre += a[i];
+            int c = std::lower_bound(all.begin(), all.end(), d[i]) - all.begin();
+            segmentTree.modify(c, {1, d[i]});
+            L--, R++;
+            get(l[i], r[i]);
+        }
+        for (auto [y, id] : query[i]) {
+            ans[id] = Query(y);
         }
     }
 
@@ -380,10 +242,16 @@ void solve() {
 }
 
 signed main() {
-    std::ios::sync_with_stdio(0);
-    std::cin.tie(0);
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-    int Case = 1;
+#ifdef DEBUG
+    freopen("D:\\mypile\\acm\\ICPC\\in.txt", "r", stdin);
+    freopen("D:\\mypile\\acm\\ICPC\\out.txt", "w", stdout);
+#endif
+
+    int Case;
+    std::cin >> Case;
 
     while (Case--) {
         solve();

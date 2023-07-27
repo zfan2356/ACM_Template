@@ -102,33 +102,6 @@ struct SegmentTree {
         return findLast(1, 0, n, l, r, pred);
     }
 };
- 
-constexpr int inf = 1E9;
-struct Min {
-    int x = inf;
-};
-
-Min operator+(Min a, Min b) {
-    return {std::min(a.x, b.x)};
-}
-
-struct Max {
-    int x = -inf;
-};
-
-Max operator+(Max a, Max b) {
-    return {std::max(a.x, b.x)};
-}
-
-struct Sum {
-    int x = 0;
-};
-
-Sum operator+(Sum a, Sum b) {
-    return {a.x + b.x};
-}
-
-//SegmentTree<Min> seg(n / vector<Min>);
 ```
 
 #### 注意

@@ -1,9 +1,9 @@
-```c++
-#define fp(i, a, b) for (int i = (a), i##_ = (b) + 1; i < i##_; ++i)
-#define fd(i, a, b) for (int i = (a), i##_ = (b) - 1; i > i##_; --i)
-#define MUL(a, b) (i64(a) * (b) % P)
-#define ADD(a, b) (((a) += (b)) >= P ? (a) -= P : 0) // (a += b) %= P
-#define SUB(a, b) (((a) -= (b)) < 0 ? (a) += P: 0)  // ((a -= b) += P) %= P
+#include <bits/stdc++.h>
+
+#define int long long
+using namespace std;
+
+using ll = long long;
 
 template<typename A, typename B>
 inline std::ostream &operator<<(std::ostream &out, const std::pair <A, B> &p) {
@@ -24,14 +24,16 @@ template<typename T>
 inline std::ostream &operator<<(std::ostream &out, const std::set <T> &a) {
     return out << std::vector<T>(all(a));
 }
+#define fp(i, a, b) for (int i = (a), i##_ = (b) + 1; i < i##_; ++i)
 
-const int P = 998244353;
-const int N = 3e5 + 10;
-using Poly = std::vector<int>;
-using MultiPoly = std::vector<Poly>;
+#define fd(i, a, b) for (int i = (a), i##_ = (b) - 1; i > i##_; --i)
+const int P = 167772161;
+using ll = int64_t;
+using Poly = vector<int>;
+using MultiPoly = vector<Poly>;
 
 //快速幂
-int qpow(i64 a, int b = P - 2, i64 x = 1) {
+int qpow(ll a, int b = P - 2, ll x = 1) {
     for (; b; b >>= 1, a = a * a % P) {
         if (b & 1) {
             x = x * a % P;
@@ -43,10 +45,10 @@ int qpow(i64 a, int b = P - 2, i64 x = 1) {
 
 class Cipolla { //二次剩余
     int P, I2{};
-    using pll = std::pair<i64, i64>;
+    using pll = pair<ll, ll>;
 #define X first
 #define Y second
-    i64 mul(i64 a, i64 b) const {
+    ll mul(ll a, ll b) const {
         return a * b % P;
     }
 
@@ -62,7 +64,7 @@ class Cipolla { //二次剩余
     }
 public:
     Cipolla(int p = 0) : P(p) {}
-    std::pair<int, int> sqrt(int n) {
+    pair<int, int> sqrt(int n) {
         int a = rand(), x;
         if (!(n %= P)) {
             return { 0, 0};
@@ -71,7 +73,7 @@ public:
             return { -1, -1};
         }
 
-        while (qpow(I2 = ((i64)a * a - n + P) % P, (P - 1) >> 1, 1ll) == 1) {
+        while (qpow(I2 = ((ll)a * a - n + P) % P, (P - 1) >> 1, 1ll) == 1) {
             a = rand();
         }
         x = (int)POW(pll{ a, 1 }, (P + 1) >> 1, { 1, 0 }).X;
@@ -84,6 +86,10 @@ public:
 #undef X
 #undef Y
 };
+#define MUL(a, b) (ll(a) * (b) % P)
+#define ADD(a, b) (((a) += (b)) >= P ? (a) -= P : 0) // (a += b) %= P
+
+#define SUB(a, b) (((a) -= (b)) < 0 ? (a) += P: 0)  // ((a -= b) += P) %= P
 
 //预处理L以内的逆元(0 ~ L-1)
 Poly getInv(int L) {
@@ -94,6 +100,8 @@ Poly getInv(int L) {
     }
     return inv;
 }
+
+const int N = 1e5 + 10;
 
 auto inv = getInv(N);
 
@@ -132,9 +140,10 @@ namespace NTT {
         fp(i, 0, n - 1) {
             a[i] = MUL(a[i], Inv);
         }
-        std::reverse(a + 1, a + n);
+        reverse(a + 1, a + n);
     }
 }
+
 namespace FWT {
     void FWTor(Poly& a, bool rev) {
         int n = a.size();
@@ -174,6 +183,7 @@ namespace FWT {
                 }
     }
 }
+
 
 namespace Polynomial {
     // size确定以及NTT乘法
@@ -224,7 +234,7 @@ namespace Polynomial {
 
     // 多项式之间的加减运算
     Poly& operator+=(Poly& a, Poly b) {
-        a.resize(std::max(a.size(), b.size()));
+        a.resize(max(a.size(), b.size()));
         fp(i, 0, b.size() - 1) {
             ADD(a[i], b[i]);
         }
@@ -234,7 +244,7 @@ namespace Polynomial {
         return a += b;
     }
     Poly& operator-=(Poly& a, Poly b) {
-        a.resize(std::max(a.size(), b.size()));
+        a.resize(max(a.size(), b.size()));
         fp(i, 0, b.size() - 1) {
             SUB(a[i], b[i]);
         }
@@ -251,7 +261,7 @@ namespace Polynomial {
             Poly c(n);
             fp(i, 0, a.size() - 1) {
                 fp(j, 0, b.size() - 1) {
-                    c[i + j] = (c[i + j] + (i64)a[i] * b[j]) % P;
+                    c[i + j] = (c[i + j] + (ll)a[i] * b[j]) % P;
                 }
             }
             return c;
@@ -305,7 +315,7 @@ namespace Polynomial {
         reverse(a.begin(), a.end());
         return a;
     }
-    std::pair<Poly, Poly> operator%(Poly a, const Poly& b) {
+    pair<Poly, Poly> operator%(Poly a, const Poly& b) {
         Poly c = a / b;
         a -= b * c;
         a.resize(b.size() - 1);
@@ -393,7 +403,7 @@ namespace Polynomial {
         while (d < n && !a[d]) {
             ++d;
         }
-        if ((i64)d * b1 >= n) {
+        if ((ll)d * b1 >= n) {
             return Poly(n);
         }
         a.erase(a.begin(), a.begin() + d);
@@ -429,8 +439,8 @@ namespace Polynomial {
     }
 
     // Get [x ^ k](f / g)
-    int divAt(Poly f, Poly g, i64 k) {
-        int n = std::max(f.size(), g.size()), m = norm(n);
+    int divAt(Poly f, Poly g, ll k) {
+        int n = max(f.size(), g.size()), m = norm(n);
         for (; k; k >>= 1) {
             f.resize(m * 2, 0), DFT(f);
             g.resize(m * 2, 0), DFT(g);
@@ -451,7 +461,7 @@ namespace Polynomial {
     }
 
     // Get a[k] by a[n] = sum c[i] * a[n - i]
-    int LinearRecur(Poly a, Poly c, i64 k) {
+    int LinearRecur(Poly a, Poly c, ll k) {
         c[0] = P - 1, a = a * c;
         a.resize(c.size() - 1);
         return divAt(a, c, k);
@@ -510,4 +520,60 @@ namespace Polynomial {
 }
 
 using namespace Polynomial;
-```
+#define DEBUG
+
+void solve() {
+    int n, m, p;
+    cin >> n >> m >> p;
+    vector<int> a(n + m - 1), b(n + m - 1), c(n), d(n);
+    for (auto &x : a) {
+        cin >> x;
+        x = x * p % P;
+    }
+    for (auto &x : b) {
+        cin >> x;
+        x = (x * (1 - p) % P + P) % P;
+    }
+    for (auto &x : c) {
+        cin >> x;
+        x = (x * (1 - p) % P + P) % P;
+    }
+    for (auto &x : d) {
+        cin >> x;
+        x = x * qpow(m, P - 2) % P;
+    }
+
+    vector<Poly> tr((n + 1) << 2 | 1);
+    function<void(int, int, int)> build = [&](int u, int l, int r) {
+        if (l == r) {
+            tr[l] = {1, c[l - 1]};
+            return ;
+        }
+        int mid = l + r >> 1;
+        build(u << 1, l, mid), build(u << 1 | 1, mid + 1, r);
+        tr[u] = tr[u << 1] * tr[u << 1 | 1];
+    };
+    build(1, 1, n);
+
+    Poly ans(n + 1);
+
+}
+
+signed main() {
+    std::ios::sync_with_stdio(0);
+    std::cin.tie(0);
+
+#ifdef DEBUG
+    freopen("D:\\mypile\\acm\\ICPC\\in.txt", "r", stdin);
+    freopen("D:\\mypile\\acm\\ICPC\\out.txt", "w", stdout);
+#endif
+
+
+    int Case = 1;
+
+    while (Case--) {
+        solve();
+    }
+
+    return 0;
+}
