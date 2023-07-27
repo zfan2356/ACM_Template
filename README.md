@@ -10,7 +10,7 @@
 #### [朴素线段树SegmentTree](https://github.com/zfan2356/ICPC/blob/94943f0dd09bc3be8b072e3cf9518ebd6f4f1fc8/model/SegmentTree.md)
 #### [懒标记线段树LazySegmentTree](https://github.com/zfan2356/ICPC/blob/94943f0dd09bc3be8b072e3cf9518ebd6f4f1fc8/model/LazySegmentTree.md)
 #### [树链剖分HLD](https://github.com/zfan2356/ICPC/blob/94943f0dd09bc3be8b072e3cf9518ebd6f4f1fc8/model/HLD.md)
-
+#### [Splay](https://github.com/zfan2356/ICPC/blob/2a9eca781d63a7ea7425a5bb2cdef418b24cb270/model/Splay.md)
 
 ### 数学
 
