@@ -134,6 +134,12 @@ struct Splay {
         splay(cur);
         return cur;
     }
+    T precursor(T v) {
+        insert(v);
+        T res = val[precursor()];
+        Delete(v);
+        return res;
+    }
 
     int successor() {   //后继
         int cur = tr[root][1];
@@ -146,6 +152,12 @@ struct Splay {
         }
         splay(cur);
         return cur;
+    }
+    T successor(T v) {
+        insert(v);
+        T res = val[successor()];
+        Delete(v);
+        return res;
     }
 
     void Delete(int k) {
