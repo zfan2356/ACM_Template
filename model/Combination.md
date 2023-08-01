@@ -1,39 +1,41 @@
 ```c++
 template<class T>
-T power(T a, ll b) {
+constexpr T power(T a, i64 b) {
     T res = 1;
-    for (; b; b /= 2, a *= a)
-        if (b % 2) res *= a;
+    for (; b; b /= 2, a *= a) {
+        if (b % 2) {
+            res *= a;
+        }
+    }
     return res;
 }
 
-ll mul(ll a, ll b, ll p) {
-    ll res = a * b - ll(1.L * a * b / p) * p;
+constexpr i64 mul(i64 a, i64 b, i64 p) {
+    i64 res = a * b - i64(1.L * a * b / p) * p;
     res %= p;
     if (res < 0) {
         res += p;
     }
     return res;
 }
-
-template<ll P>
+template<i64 P>
 struct MLong {
-    ll x;
+    i64 x;
     constexpr MLong() : x{} {}
-    constexpr MLong(ll x) : x{norm(x % getMod())} {}
+    constexpr MLong(i64 x) : x{norm(x % getMod())} {}
 
-    static ll Mod;
-    constexpr static ll getMod() {
+    static i64 Mod;
+    constexpr static i64 getMod() {
         if (P > 0) {
             return P;
         } else {
             return Mod;
         }
     }
-    constexpr static void setMod(ll Mod_) {
+    constexpr static void setMod(i64 Mod_) {
         Mod = Mod_;
     }
-    constexpr ll norm(ll x) const {
+    constexpr i64 norm(i64 x) const {
         if (x < 0) {
             x += getMod();
         }
@@ -42,10 +44,10 @@ struct MLong {
         }
         return x;
     }
-    constexpr ll val() const {
+    constexpr i64 val() const {
         return x;
     }
-    explicit constexpr operator ll() const {
+    explicit constexpr operator i64() const {
         return x;
     }
     constexpr MLong operator-() const {
@@ -93,7 +95,7 @@ struct MLong {
         return res;
     }
     friend constexpr std::istream &operator>>(std::istream &is, MLong &a) {
-        ll v;
+        i64 v;
         is >> v;
         a = MLong(v);
         return is;
@@ -110,13 +112,13 @@ struct MLong {
 };
 
 template<>
-ll MLong<0LL>::Mod = 1;
+i64 MLong<0LL>::Mod = i64(1E18) + 9;
 
 template<int P>
 struct MInt {
     int x;
     constexpr MInt() : x{} {}
-    constexpr MInt(ll x) : x{norm(x % getMod())} {}
+    constexpr MInt(i64 x) : x{norm(x % getMod())} {}
 
     static int Mod;
     constexpr static int getMod() {
@@ -189,7 +191,7 @@ struct MInt {
         return res;
     }
     friend constexpr std::istream &operator>>(std::istream &is, MInt &a) {
-        ll v;
+        i64 v;
         is >> v;
         a = MInt(v);
         return is;
@@ -206,12 +208,12 @@ struct MInt {
 };
 
 template<>
-int MInt<0>::Mod = 1;
+int MInt<0>::Mod = 998244353;
 
 template<int V, int P>
 constexpr MInt<P> CInv = MInt<P>(V).inv();
 
-constexpr int P = 1e9 + 7;
+constexpr int P = 1000000007;
 using Z = MInt<P>;
 
 struct Comb {
@@ -219,18 +221,18 @@ struct Comb {
     std::vector<Z> _fac;
     std::vector<Z> _invfac;
     std::vector<Z> _inv;
-    
+
     Comb() : n{0}, _fac{1}, _invfac{1}, _inv{0} {}
     Comb(int n) : Comb() {
         init(n);
     }
-    
+
     void init(int m) {
         if (m <= n) return;
         _fac.resize(m + 1);
         _invfac.resize(m + 1);
         _inv.resize(m + 1);
-        
+
         for (int i = n + 1; i <= m; i++) {
             _fac[i] = _fac[i - 1] * i;
         }
@@ -241,7 +243,7 @@ struct Comb {
         }
         n = m;
     }
-    
+
     Z fac(int m) {
         if (m > n) init(2 * m);
         return _fac[m];
@@ -259,5 +261,4 @@ struct Comb {
         return fac(n) * invfac(m) * invfac(n - m);
     }
 } comb;
-
 ```
