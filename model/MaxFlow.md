@@ -68,12 +68,14 @@ struct MaxFlow {
         }
         return f - r;
     }
+    
     void addEdge(int u, int v, T c) {
         g[u].push_back(e.size());
         e.emplace_back(v, c);
         g[v].push_back(e.size());
         e.emplace_back(u, 0);
     }
+    
     T flow(int s, int t) {
         T ans = 0;
         while (bfs(s, t)) {

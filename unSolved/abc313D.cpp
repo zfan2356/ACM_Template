@@ -28,23 +28,38 @@ inline std::ostream &operator<<(std::ostream &out, const std::set <T> &a) {
 constexpr int inf = 1e9;
 
 void solve() {
-    int n;
-    cin >> n;
-    std::vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
-    int ans = 0;
-    while (1) {
-        std::sort(a.begin(), a.end());
-        if (a[n - 1] - a[0] <= 1) {
-            cout << a << endl;
-            cout << ans << endl;
-            break;
+    int n, k;
+    cin >> n >> k;
+
+    auto query = [&](std::vector<int>& p) {
+        cout << "? ";
+        for (auto x : p) {
+            cout << " " << x;
         }
-        ans++;
-        a[n - 1]--, a[0]++;
+        cout << endl;
+        int x;
+        cin >> x;
+        return x;
+    };
+
+    std::vector<int> p;
+    for (int i = 1; i <= k; i++) {
+        p.push_back(i);
     }
+    int t = query(p);
+    std::vector<int> pre(n + 1, -1);
+
+    for (int i = k + 1; i <= n; i++) {
+        p.pop_back();
+        p.push_back(i);
+        int t2 = query(p);
+        pre[i] = t ^ t2;
+    }
+
+    for (int i = 1; i < k; i++) {
+
+    }
+
 
 }
 

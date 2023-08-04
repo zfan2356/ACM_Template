@@ -30,21 +30,18 @@ constexpr int inf = 1e9;
 void solve() {
     int n;
     cin >> n;
-    std::vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
+
+    std::vector<std::vector<int>> g(n);
+    for (int i = 1; i < n; i++) {
+        int p;
+        cin >> p;
+        g[i].push_back(p);
+        g[p].push_back(i);
     }
-    int ans = 0;
-    while (1) {
-        std::sort(a.begin(), a.end());
-        if (a[n - 1] - a[0] <= 1) {
-            cout << a << endl;
-            cout << ans << endl;
-            break;
-        }
-        ans++;
-        a[n - 1]--, a[0]++;
-    }
+
+    std::function<void(int, int)> dfs = [&](int u, int fa) {
+
+    };
 
 }
 
