@@ -8,7 +8,7 @@ struct Fenwick {
         init(n);
     }
 
-    Fenwick(vector<T>& b) {
+    Fenwick(std::vector<T>& b) {
         init(b);
     }
 
@@ -17,7 +17,7 @@ struct Fenwick {
         a.assign(n, T());
     }
 
-    void init(vector<T> &b) {
+    void init(std::vector<T> &b) {
         this->n = b.size();
         a.assign(n, T());
         for (int i = 1; i <= n; i++) {
@@ -58,6 +58,7 @@ struct Fenwick {
         return x;
     }
 };
+
 ```
 
 ### 单点修改, 区间查询
