@@ -5,30 +5,9 @@
 #define ADD(a, b) (((a) += (b)) >= P ? (a) -= P : 0) // (a += b) %= P
 #define SUB(a, b) (((a) -= (b)) < 0 ? (a) += P: 0)  // ((a -= b) += P) %= P
 
-/*
-template<typename A, typename B>
-inline std::ostream &operator<<(std::ostream &out, const std::pair <A, B> &p) {
-    return out << "(" << p.first << ", " << p.second << ")";
-}
-
-template<typename T>
-inline std::ostream &operator<<(std::ostream &out, const std::vector <T> &a) {
-    out << "[";
-    for (int i = 0; i < a.size(); i++) {
-        if (i) out << ',';
-        out << ' ' << a[i];
-    }
-    return out << " ]";
-}
-
-template<typename T>
-inline std::ostream &operator<<(std::ostream &out, const std::set <T> &a) {
-    return out << std::vector<T>(all(a));
-}
- */
 
 const int P = 998244353;
-const int N = 3e5 + 10;
+const int N = 5e5 + 10;
 using Poly = std::vector<int>;
 using MultiPoly = std::vector<Poly>;
 
@@ -503,40 +482,32 @@ namespace Polynomial {
         FWT::FWTxor(A, true);
         return A;
     }
-    
+
 }
 
 using namespace Polynomial;
 
 struct Comb {
     int n;
-    std::vector<int> fac, invfac, inv;
+    std::vector<int> fac, invfac;
 
-    Comb() : n{0}, fac{1}, invfac{1}, inv{0} {}
+    Comb() : n{0}, fac{1}, invfac{1} {}
     Comb(int n) : n{n} {
-        init();
+        init(n);
     }
 
-    void init() {
-        fac.resize(n + 1);
-        invfac.resize(n + 1);
-        inv.resize(n + 1);
-
-        inv[1] = 1;
-        for (int i = 2; i <= n; i++) {
-            inv[i] = P - 1ll * inv[P % i] * (P / i) % P;
-        }
+    void init(int N) {
+        this->n = N;
+        fac.resize(N + 1);
+        invfac.resize(N + 1);
 
         fac[0] = invfac[0] = 1;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= N; i++) {
             fac[i] = 1ll * fac[i - 1] * i % P;
-        }
-        invfac[n - 1] = qpow(fac[n - 1], P - 2);
-        for (int i = n - 1; i; i--) {
-            invfac[i - 1] = 1ll * invfac[i] * i % P;
+            invfac[i] = 1ll * invfac[i - 1] * inv[i] % P;
         }
     }
-    
+
     int binom(int n, int m) {
         if (n < m || m < 0 || n < 0) {
             return 0;
