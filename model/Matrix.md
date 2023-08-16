@@ -1,8 +1,9 @@
 ```c++
+
 template<typename T>
 struct Matrix {
     int m, n;
-    vector<vector<T>> data;
+    std::vector<std::vector<T>> data;
 
     Matrix() : m(0), n(0) {
         data.resize(0);
@@ -85,7 +86,7 @@ struct Matrix {
         return ans;
     }
 
-    vector<T> &operator[](int rank) {
+    std::vector<T> &operator[](int rank) {
         return data[rank];
     }
 
@@ -123,7 +124,7 @@ struct Matrix {
         return ans;
     }
 
-    friend istream &operator>>(istream &in, Matrix &x) {
+    friend std::istream &operator>>(std::istream &in, Matrix &x) {
         in >> x.m >> x.n;
         x.data.resize(x.m, vector<int>(x.n));
         for (int i = 0; i < x.m; i++) {
@@ -134,7 +135,7 @@ struct Matrix {
         return in;
     }
 
-    friend ostream &operator<<(ostream &out, const Matrix &x) {
+    friend std::ostream &operator<<(std::ostream &out, const Matrix &x) {
         for (int i = 0; i < x.m; i++) {
             for (int j = 0; j < x.n; j++) {
                 out << x.data[i][j] << (j == x.n - 1 ? '\n' : ' ');
@@ -169,43 +170,5 @@ struct Matrix {
         return false;
     }
 };
-```
 
-```c++
-Matrix Inv(Matrix& a) {
-    Matrix res(n);
-    for (int i = 0, r; i < n; ++i) {
-        r = i;
-        for (int j = i + 1; j < n; ++j) {
-            if (a.data[j][i] > a.data[r][i]) {
-                r = j;
-            }
-        }
-        swap(a.data[i], a.data[r]);
-        swap(res.data[i], res.data[r]);
-
-        if (!a.data[i][i]) {
-            return res.data[0][0] = -1, res;
-        }
-
-        T Invaii = qpow(a.data[i][i], mod - 2);
-        for (int k = 0; k < n; ++k) {
-            a.data[i][k] = a.data[i][k] * Invaii % mod;
-        }
-        for (int k = 0; k < n; ++k) {
-            res.data[i][k] = res.data[i][k] * Invaii % mod;
-        }
-        for (int j = 0; j < n; ++j)
-            if (j != i) {
-                T tmp = a.data[j][i];
-                for (int k = i; k < n; ++k) {
-                    a.data[j][k] = (a.data[j][k] - tmp * a.data[i][k] % mod + mod) % mod;
-                }
-                for (int k = 0; k < n; ++k) {
-                    res.data[j][k] = (res.data[j][k] - tmp * res.data[i][k] % mod + mod) % mod;
-                }
-            }
-    }
-    return res;
-}
 ```

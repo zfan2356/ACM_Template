@@ -7,14 +7,14 @@ namespace P1 {
         T res = 1;
         for (; b; b /= 2, a *= a)if (b % 2)res *= a;
         return res;
-    }//必须是封装后的类型
+    }
     struct Z {
         DAT z;
         constexpr DAT norm(DAT x) {
             if (x < 0)x += P;
             if (x >= P)x -= P;
             return x;
-        } // -P <= x < 2P
+        }
         constexpr Z(DAT x = 0) : z(norm(x)) {}
         constexpr DAT val() const { return z; }
         constexpr Z operator-() const { return Z(P - z); }
