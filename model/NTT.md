@@ -1,3 +1,4 @@
+#### NTT模板
 ```c++
 #define fp(i, a, b) for (int i = (a), i##_ = (b) + 1; i < i##_; ++i)
 #define fd(i, a, b) for (int i = (a), i##_ = (b) - 1; i > i##_; --i)
@@ -518,7 +519,7 @@ struct Comb {
 
 ```
 
-
+#### NTT模板
 ```c++
 template<class T>
 #define constexpr
