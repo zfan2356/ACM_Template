@@ -6,7 +6,7 @@ T exgcd(T a, T b, T &x, T &y) {
         return a;
     }
     T r = exgcd(b, a % b, x, y);
-    tie(x, y) = make_tuple(y, x - (a / b) * y);
+    std::tie(x, y) = std::make_tuple(y, x - (a / b) * y);
     return r;
 }
 
