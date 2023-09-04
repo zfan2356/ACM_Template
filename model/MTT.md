@@ -51,15 +51,6 @@ namespace P1 {
             Z res = l;
             return res /= r;
         }
-        friend constexpr std::istream &operator>>(std::istream &is, Z &a) {
-            i64 v;
-            is >> v;
-            a = Z(v);
-            return is;
-        }
-        friend constexpr std::ostream &operator<<(std::ostream &os, const Z &a) {
-            return os << a.val();
-        }
         friend constexpr bool operator==(Z lhs, Z rhs) {
             return lhs.val() == rhs.val();
         }
@@ -116,10 +107,9 @@ namespace P1 {
         return a;
     }
 }
-
 namespace MTT {
     typedef int DAT;
-    constexpr DAT P = 19260817;// 注意赋值
+    constexpr DAT P = 1e9 + 7;// 注意赋值
     template<typename T>
     constexpr T Pow(T a, DAT b = P - 2) {
         T res = 1;
@@ -166,15 +156,6 @@ namespace MTT {
         constexpr friend Z operator/(const Z &l, const Z &r) {
             Z res = l;
             return res /= r;
-        }
-        friend constexpr std::istream &operator>>(std::istream &is, Z &a) {
-            i64 v;
-            is >> v;
-            a = Z(v);
-            return is;
-        }
-        friend constexpr std::ostream &operator<<(std::ostream &os, const Z &a) {
-            return os << a.val();
         }
         friend constexpr bool operator==(Z lhs, Z rhs) {
             return lhs.val() == rhs.val();
