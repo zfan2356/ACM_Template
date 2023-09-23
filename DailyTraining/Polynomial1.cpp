@@ -26,19 +26,16 @@ inline std::ostream &operator<<(std::ostream &out, const std::set <T> &a) {
     return out << std::vector<T>(all(a));
 }
 
-
 #define fp(i, a, b) for (int i = (a), i##_ = (b) + 1; i < i##_; ++i)
 #define fd(i, a, b) for (int i = (a), i##_ = (b) - 1; i > i##_; --i)
 #define MUL(a, b) (i64(a) * (b) % P)
 #define ADD(a, b) (((a) += (b)) >= P ? (a) -= P : 0) // (a += b) %= P
 #define SUB(a, b) (((a) -= (b)) < 0 ? (a) += P: 0)  // ((a -= b) += P) %= P
 
-
 const int P = 998244353;
 const int N = 5e5 + 10;
 using Poly = std::vector<int>;
 using MultiPoly = std::vector<Poly>;
-
 
 //快速幂
 int qpow(i64 a, int b = P - 2, i64 x = 1) {
@@ -49,7 +46,6 @@ int qpow(i64 a, int b = P - 2, i64 x = 1) {
     }
     return x;
 }
-
 
 class Cipolla { //二次剩余
     int P, I2{};
@@ -98,7 +94,6 @@ Poly getInv(int L) {
     }
     return inv;
 }
-
 auto inv = getInv(N);
 
 namespace NTT {
@@ -114,7 +109,7 @@ namespace NTT {
         }
         return w;
     }
-    auto W = Omega(1 << 23); // 注意这边的size，如果大于3e5，改成23；
+    auto W = Omega(1 << 20); // 注意这边的size，如果大于3e5，改成23；
     void DIF(int* a, int n) {
         for (int k = n >> 1; k; k >>= 1)
             for (int i = 0, y; i < n; i += k << 1)
@@ -140,46 +135,6 @@ namespace NTT {
     }
 }
 
-namespace FWT {
-    void FWTor(Poly& a, bool rev) {
-        int n = a.size();
-        for (int l = 2, m = 1; l <= n; l <<= 1, m <<= 1)
-            for (int j = 0; j < n; j += l) fp(i, 0, m - 1) {
-                    if (!rev) {
-                        a[i + j + m] = ADD(a[i + j + m], a[i + j]);
-                    } else {
-                        a[i + j + m] = SUB(a[i + j + m], a[i + j]);
-                    }
-                }
-    }
-    void FWTand(Poly& a, bool rev) {
-        int n = a.size();
-        for (int l = 2, m = 1; l <= n; l <<= 1, m <<= 1)
-            for (int j = 0; j < n; j += l) fp(i, 0, m - 1) {
-                    if (!rev) {
-                        a[i + j] = ADD(a[i + j], a[i + j + m]);
-                    } else {
-                        a[i + j] = SUB(a[i + j], a[i + j + m]);
-                    }
-                }
-    }
-    void FWTxor(Poly& a, bool rev) {
-        int n = a.size(), inv2 = (P + 1) >> 1;
-        for (int l = 2, m = 1; l <= n; l <<= 1, m <<= 1)
-            for (int j = 0; j < n; j += l) fp(i, 0, m - 1) {
-                    int x = a[i + j], y = a[i + j + m];
-                    if (!rev) {
-                        a[i + j] = ADD(x, y);
-                        a[i + j + m] = SUB(x, y);
-                    }
-                    else {
-                        a[i + j] = MUL(ADD(x, y), inv2);
-                        a[i + j + m] = MUL(SUB(x, y), inv2);
-                    }
-                }
-    }
-}
-
 namespace Polynomial {
     // size确定以及NTT乘法
     int norm(int n) {
@@ -192,10 +147,10 @@ namespace Polynomial {
             a = {0};
         }
     }
+
     void DFT(Poly& a) {
         NTT::DIF(a.data(), a.size());
     }
-
     void IDFT(Poly& a) {
         NTT::IDIT(a.data(), a.size());
     }
@@ -287,7 +242,6 @@ namespace Polynomial {
         move(c.begin(), c.end(), a.begin());
         return a;
     }
-
     Poly Inv(Poly a) {
         int n = a.size();
         norm(a);
@@ -339,7 +293,6 @@ namespace Polynomial {
         a.resize(n - 1);
         return integ(a);
     }
-
     // 取exp
     Poly Exp(Poly a) {
         int n = a.size(), k = norm(n);
@@ -416,18 +369,15 @@ namespace Polynomial {
         Poly x(a * i);
         return (Exp(x) - Exp((P - 1) * x)) * qpow(2 * i % P);
     }
-
     Poly Cos(Poly &a) {
         int i = qpow(3, (P - 1) / 4);
         Poly x(a * i);
         return (Exp(x) + Exp((P - 1) * x)) * qpow(2);
     }
-
     Poly ASin(Poly &a) {
         int i = qpow(3, (P - 1) / 4);
         return (P - 1) * i % P * Ln(i * a + Sqrt(Poly{1} - a * a));
     }
-
     Poly ATan(Poly &a) {
         int i = qpow(3, (P - 1) / 4);
         return i * qpow(2) % P * (Ln(Poly{1} - i * a) - Ln(Poly{1} + i * a));
@@ -461,58 +411,6 @@ namespace Polynomial {
         a.resize(c.size() - 1);
         return divAt(a, c, k);
     }
-
-    //Binary convolution for &^|
-    Poly operator|(Poly a, Poly b) {
-        int n = std::max(a.size(), b.size()), N = norm(n);
-        a.resize(N);
-        FWT::FWTor(a, false);
-
-        b.resize(N);
-        FWT::FWTor(b, false);
-
-        Poly A(N);
-        fp(i, 0, N - 1) {
-            A[i] = MUL(a[i], b[i]);
-        }
-        FWT::FWTor(A, true);
-        return A;
-    }
-
-    Poly operator&(Poly a, Poly b) {
-        int n = std::max(a.size(), b.size()), N = norm(n);
-        a.resize(N);
-        FWT::FWTand(a, false);
-
-        b.resize(N);
-        FWT::FWTand(b, false);
-
-        Poly A(N);
-        fp(i, 0, N - 1) {
-            A[i] = MUL(a[i], b[i]);
-        }
-
-        FWT::FWTand(A, true);
-        return A;
-    }
-
-    Poly operator^(Poly a, Poly b) {
-        int n = std::max(a.size(), b.size()), N = norm(n);
-        a.resize(N);
-        FWT::FWTxor(a, false);
-
-        b.resize(N);
-        FWT::FWTxor(b, false);
-
-        Poly A(N);
-        fp(i, 0, N - 1) {
-            A[i] = MUL(a[i], b[i]);
-        }
-
-        FWT::FWTxor(A, true);
-        return A;
-    }
-
 }
 
 using namespace Polynomial;
@@ -548,39 +446,30 @@ struct Comb {
 
 constexpr int inf = 1e9;
 
-
 void solve() {
-    int n;
-    cin >> n;
-    n = qpow(2, n);
+    i64 n;
+    int k;
+    cin >> n >> k;
+    Poly delta(k + 1);
+    delta[0] = 9, delta[1] = P - 2, delta[2] = 1;
+    delta = Sqrt(delta);
+    Poly A1 = Poly{1, 1} + delta;
+    A1 /= 2;
+    A1 = Pow(A1, n % P, n % (P - 1)) * (delta - Poly{P - 5, 1});
 
-    Poly a(n), b(n);
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
-    for (int i = 0; i < n; i++) {
-        cin >> b[i];
-    }
+    Poly A2 = Poly{1, 1} - delta;
+    A2 /= 2;
+    A2 = Pow(A2, n % P, n % (P - 1)) * (Poly{P - 5, 1} + delta);
 
-    Poly c = a | b;
-    for (int i = 0; i < n; i++) {
-        cout << c[i] << " ";
+    Poly ans = (A1 + A2) * Inv(2 * delta);
+
+    for (int i = 0; i <= k; i++) {
+        cout << ans[i] << " ";
     }
     cout << '\n';
-    c = a & b;
-    for (int i = 0; i < n; i++) {
-        cout << c[i] << " ";
-    }
-    cout << '\n';
-    c = a ^ b;
-    for (int i = 0; i < n; i++) {
-        cout << c[i] << " ";
-    }
-    cout << '\n';
+
 }
-
-
-signed main() {
+int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 

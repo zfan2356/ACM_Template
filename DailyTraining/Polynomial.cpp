@@ -557,52 +557,23 @@ struct Comb {
 constexpr int inf = 1e9;
 
 void solve() {
-    int n;
-    cin >> n;
+    i64 n;
+    int k;
+    cin >> n >> k;
+    Poly<P> delta = {9, -2, 1};
+    delta = delta.sqrt(k + 1);
+    Poly<P> A1 = Poly<P>{1, 1} + delta;
+    A1 /= 2;
+    A1 = A1.pow(n % (P - 1), k + 1) * (Poly<P>{-5, 1} - delta);
 
-    Poly<P> A(n + 1);
-    for (int i = 1; i <= n; i++) {
-        cin >> A[i];
-    }
+    Poly<P> A2 = Poly<P>{1, 1} - delta;
+    A2 /= 2;
+    A2 = A2.pow(n % (P - 1), k + 1) * (Poly<P>{-5, 1} + delta);
 
-    Poly<P> F(n + 1), S(n + 1);
-    std::function<void(int, int)> work = [&](int l, int r) {
-        if (r - l == 1) {
-            if (l == 0) {
-                F[l] = 1;
-                S[l] = 1;
-            } else {
-                F[l] *= A[l];
-                S[l] += S[l - 1] + 2 * F[l];
-            }
-            return ;
-        }
-        int m = (l + r + 1) / 2;
-        work(l, m);
+    Poly<P> ans = (A1 + A2) * ((2 * delta).inv(k + 1));
 
-        if (l == 0) {
-            Poly f(F.begin() + l, F.begin() + m);
-            f *= f;
-
-            for (int i = m; i < r; i++) {
-                S[i] += f[i];
-            }
-
-        } else {
-            Poly f(F.begin() + l, F.begin() + m);
-            Poly g(F.begin(), F.begin() + r - l);
-            f *= g;
-            for (int i = m; i < r; i++) {
-                S[i] += 2 * f[i - l];
-            }
-        }
-        work(m, r);
-    };
-
-    work(0, n);
-
-    for (int i = 1; i <= n; i++) {
-        cout << F[i] << " ";
+    for (int i = 0; i <= k; i++) {
+        cout << ans[i] << " ";
     }
     cout << '\n';
 

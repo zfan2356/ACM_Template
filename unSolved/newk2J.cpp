@@ -184,7 +184,6 @@ namespace FWT {
     }
 }
 
-
 namespace Polynomial {
     // size确定以及NTT乘法
     int norm(int n) {
@@ -520,7 +519,6 @@ namespace Polynomial {
 }
 
 using namespace Polynomial;
-#define DEBUG
 
 void solve() {
     int n, m, p;
@@ -562,12 +560,6 @@ void solve() {
 signed main() {
     std::ios::sync_with_stdio(0);
     std::cin.tie(0);
-
-#ifdef DEBUG
-    freopen("D:\\mypile\\acm\\ICPC\\in.txt", "r", stdin);
-    freopen("D:\\mypile\\acm\\ICPC\\out.txt", "w", stdout);
-#endif
-
 
     int Case = 1;
 
