@@ -120,3 +120,48 @@ auto f = [&](int x) {
 };
 
  */
+
+ /*
+  * 动态开点
+  */
+
+ struct Node {
+     int cnt = 0;
+     Node *l = nullptr, *r = nullptr;
+     Node() {}
+ };
+
+void pull(Node *&t) {
+    t->cnt = 0;
+    if (t->l) t->cnt += t->l->cnt;
+    if (t->r) t->cnt += t->r->cnt;
+}
+
+void modify(Node *&t, int l, int r, int x, int val) {
+    if (t == nullptr) {
+        t = new Node;
+    }
+    if (r - l == 1) {
+        t->cnt += val;
+        return ;
+    }
+
+    int m = (l + r) / 2;
+    if (x < m) {
+        modify(t->l, l, m, x, val);
+    } else {
+        modify(t->r, m, r, x, val);
+    }
+    pull(t);
+}
+
+int query(Node *t, int l, int r, int x, int y) {
+    if (t == nullptr || l >= y || r <= x) {
+        return 0;
+    }
+    if (x <= l && r <= y) {
+        return t->cnt;
+    }
+    int m = (l + r) / 2;
+    return query(t->l, l, m, x, y) + query(t->r, m, r, x, y);
+}
