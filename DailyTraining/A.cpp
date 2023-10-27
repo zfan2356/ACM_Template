@@ -1,83 +1,97 @@
 #include <bits/stdc++.h>
 
-using std::cin;
-using std::cout;
-using std::endl;
 using i64 = long long;
 
-template<typename A, typename B>
-inline std::ostream &operator<<(std::ostream &out, const std::pair <A, B> &p) {
-    return out << "(" << p.first << ", " << p.second << ")";
+struct Node {
+    int cnt = 0;
+    Node *l = nullptr, *r = nullptr;
+    Node() {}
+};
+
+void pull(Node *&t) {
+    t->cnt = 0;
+    if (t->l) t->cnt += t->l->cnt;
+    if (t->r) t->cnt += t->r->cnt;
 }
 
-template<typename T>
-inline std::ostream &operator<<(std::ostream &out, const std::vector <T> &a) {
-    out << "[";
-    for (int i = 0; i < a.size(); i++) {
-        if (i) out << ',';
-        out << ' ' << a[i];
+void modify(Node *&t, int l, int r, int x, int val) {
+    if (t == nullptr) {
+        t = new Node;
     }
-    return out << " ]";
+    if (r - l == 1) {
+        t->cnt += val;
+        return ;
+    }
+
+    int m = (l + r) / 2;
+    if (x < m) {
+        modify(t->l, l, m, x, val);
+    } else {
+        modify(t->r, m, r, x, val);
+    }
+    pull(t);
 }
 
-template<typename T>
-inline std::ostream &operator<<(std::ostream &out, const std::set <T> &a) {
-    return out << std::vector<T>(a.begin(), a.end());
+int query(Node *t, int l, int r, int x, int y) {
+    if (t == nullptr || l >= y || r <= x) {
+        return 0;
+    }
+    if (x <= l && r <= y) {
+        return t->cnt;
+    }
+    int m = (l + r) / 2;
+    return query(t->l, l, m, x, y) + query(t->r, m, r, x, y);
 }
 
 constexpr int inf = 1e9;
 
+struct T {
+    int x, r, f;
+};
 
 void solve() {
     int n, k;
-    cin >> n >> k;
-    std::vector<int> a(n);
+    std::cin >> n >> k;
+
+    std::vector<T> a(n);
+    std::vector<i64> all;
     for (int i = 0; i < n; i++) {
-        cin >> a[i];
+        int x, r, f;
+        std::cin >> x >> r >> f;
+        a[i] = {x, r, f};
+        all.push_back(x), all.push_back(x + r), all.push_back(x - r);
     }
-    const int M = 2 * n * k;
-    std::vector<int> vis(M + 1);
-    for (int i = 1; i <= M; i++) {
-        for (int j = 0; j < n; j++) {
-            if ((i - 1) / a[j] % 2 == 0) {
-                vis[i] |= (1 << j);
+
+    std::sort(a.begin(), a.end(), [&](T a, T b) {
+        return a.r > b.r;
+    });
+    std::sort(all.begin(), all.end());
+    all.erase(std::unique(all.begin(), all.end()), all.end());
+
+    const int M = all.size(), N = 1e4 + 10;
+
+    std::vector<Node *> seg(N);
+
+    i64 ans = 0;
+    for (int i = 0; i < n; i++) {
+        auto [x, r, f] = a[i];
+        int L = std::lower_bound(all.begin(), all.end(), x - r) - all.begin();
+        int R = std::lower_bound(all.begin(), all.end(), x + r) - all.begin();
+        x = std::lower_bound(all.begin(), all.end(), x) - all.begin();
+//        std::cout << x << "\n";
+
+        for (int j = std::max(1, a[i].f - k); j <= std::min(N - 1, a[i].f + k); j++) {
+            if (seg[j]) {
+                ans += query(seg[j], 0, M, L, R + 1);
+//                std::cout << L << " " << R << '\n';
             }
         }
+        modify(seg[a[i].f], 0, M, x, 1);
     }
-    const int S = 1 << n;
-    // 前x天作为右部, 这时二分图是否存在完美匹配, 左边有n * k个点,
-    // 利用hall定理, 枚举左边的集合s, 然后和右边所有有连边的点的数目必须>= popcount(s)
-    // 令dp[i] 代表点集的状态为i时, 和右边没有连边的点的个数
-    auto check = [&](int x) {
-        std::vector<int> dp(S);
-        for (int i = 1; i <= x; i++) {
-            dp[vis[i] ^ (S - 1)]++;
-        }
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < S; j++) {
-                if (j >> i & 1)
-            }
-        }
+//    std::cout << query(seg[1], 0, M, 7, 9) << '\n';
 
-        for (int i = 0; i < s; i++) {
-            if (__builtin_popcount(i) * k > x - dp[S - 1 - i]) {
-                return false;
-            }
-        }
-        return true;
-    };
-
-    int l = 1, r = M;
-    while (l < r) {
-        int mid = (l + r) / 2;
-        if (check(mid)) {
-            r = mid;
-        } else {
-            l = mid + 1;
-        }
-    }
-    cout << r << '\n';
+    std::cout << ans << '\n';
 }
 
 int main() {
