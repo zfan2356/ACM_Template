@@ -142,7 +142,7 @@ struct LazySegmentTree {
 struct Tag {
     long long add = 0;
     
-    void apply(Tag t) {
+    void apply(const Tag &t) & {
         add += t.add;
     }
 };
@@ -150,12 +150,12 @@ struct Tag {
 struct Info {
     long long mn = 1E18;
     
-    void apply(Tag t) {
+    void apply(const Tag &t) & {
         mn += t.add;
     }
 };
  
-Info operator+(Info a, Info b) {
+Info operator+(const Info &a, const Info &b) {
     return {std::min(a.mn, b.mn)};
 }
 
@@ -165,7 +165,7 @@ struct Tag {
     ll t1 = 0, t2 = 0;
     ll s1 = INT_MIN, s2 = INT_MIN;
 
-    void apply_t(Tag t) {
+    void apply_t(const Tag &t) & {
         if (s1 == INT_MIN) {
             t2 = max(t2, t1 + t.t2);
             t1 += t.t1;
@@ -175,12 +175,12 @@ struct Tag {
         }
     }
 
-    void apply_s(Tag t) {
+    void apply_s(const Tag &t) & {
         s2 = max(s2, t.s2);
         s1 = t.s1;
     }
 
-    void apply(Tag t) {
+    void apply(const Tag &t) & {
         apply_t(t);
         if (t.s1 != INT_MIN || t.s2 != INT_MIN) {
             apply_s(t);
@@ -192,7 +192,7 @@ struct Tag {
 struct Info {
     ll a1 = 0;  //区间最大值
     ll a2 = 0;  //区间历史最大值
-    void apply(Tag t) {
+    void apply(const Tag &t) & {
         a2 = max(a2, a1 + t.t2);
         a1 += t.t1;
         if (t.s1 != INT_MIN || t.s2 != INT_MIN) {
@@ -202,7 +202,7 @@ struct Info {
     }
 };
 
-Info operator+(Info a, Info b) {
+Info operator+(const Info &a, const Info &b) {
     return {max(a.a1, b.a1), max(a.a2, b.a2)};
 }
 
@@ -222,4 +222,73 @@ for (int i = 0; i < m; i++) {
         cin >> x;
         lazySegmentTree.rangeApply(l, r, {0, 0, x, x});
     }
+}
+
+// 动态开点权值线段树区间修改区间查询
+
+struct Node {
+    i64 v = inf, add = 0;
+    Node *l = nullptr, *r = nullptr;
+
+    void apply(int x) { // 区间赋值
+        v = x;
+        add = x;
+    }
+};
+
+void pull(Node *&t) {  //区间求min
+    t->v = std::min(t->l->v, t->r->v);
+}
+
+void make(Node *&p, int l, int r) { // 创建新节点时为其赋值, query是[l, r] 的值
+    p = new Node();
+    p->v = Query(l, r);
+}
+
+void Apply(Node *&t, int l, int r) {
+    if (t->add) {
+        int m = (l + r) / 2;
+        if (t->l == nullptr) {
+            make(t->l, l, m);
+        }
+        t->l->apply(t->add);
+        if (t->r == nullptr) {
+            make(t->r, m, r);
+        }
+        t->r->apply(t->add);
+        t->add = 0;
+    }
+}
+
+void rangeApply(Node *&p, int l, int r, int x, int y, int v) {
+    if (p == nullptr) {
+        make(p, l, r);
+    }
+    if (l >= y || r <= x) {
+        return ;
+    }
+    if (x <= l && r <= y) {
+        p->apply(v);
+        return ;
+    }
+    Apply(p, l, r);
+    int m = (l + r) / 2;
+    rangeApply(p->l, l, m, x, y, v);
+    rangeApply(p->r, m, r, x, y, v);
+    pull(p);
+}
+
+int rangeQuery(Node *&p, int l, int r, int x, int y) {
+    if (l >= y || r <= x) {
+        return inf;
+    }
+    if (p == nullptr) {
+        make(p, l, r);
+    }
+    if (x <= l && r <= y) {
+        return p->v;
+    }
+    int m = (l + r) / 2;
+    Apply(p, l, r);
+    return std::min(rangeQuery(p->l, l, m, x, y), rangeQuery(p->r, m, r, x, y));
 }

@@ -1,5 +1,3 @@
-
-constexpr int inf = 1E9;
 template<class T>
 struct MaxFlow {
     struct _Edge {
@@ -7,17 +5,17 @@ struct MaxFlow {
         T cap;
         _Edge(int to, T cap) : to(to), cap(cap) {}
     };
-     
+
     int n;
     std::vector<_Edge> e;
     std::vector<std::vector<int>> g;
     std::vector<int> cur, h;
-     
+
     MaxFlow() {}
     MaxFlow(int n) {
         init(n);
     }
-     
+
     void init(int n) {
         this->n = n;
         e.clear();
@@ -25,7 +23,7 @@ struct MaxFlow {
         cur.resize(n);
         h.resize(n);
     }
-     
+
     bool bfs(int s, int t) {
         h.assign(n, -1);
         std::queue<int> que;
@@ -47,7 +45,7 @@ struct MaxFlow {
         }
         return false;
     }
-     
+
     T dfs(int u, int t, T f) {
         if (u == t) {
             return f;
@@ -68,14 +66,12 @@ struct MaxFlow {
         }
         return f - r;
     }
-    
     void addEdge(int u, int v, T c) {
         g[u].push_back(e.size());
         e.emplace_back(v, c);
         g[v].push_back(e.size());
         e.emplace_back(u, 0);
     }
-    
     T flow(int s, int t) {
         T ans = 0;
         while (bfs(s, t)) {
@@ -84,7 +80,7 @@ struct MaxFlow {
         }
         return ans;
     }
-     
+
     std::vector<bool> minCut() {
         std::vector<bool> c(n);
         for (int i = 0; i < n; i++) {
@@ -92,7 +88,7 @@ struct MaxFlow {
         }
         return c;
     }
-     
+
     struct Edge {
         int from;
         int to;
