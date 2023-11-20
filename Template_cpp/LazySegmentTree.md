@@ -1,3 +1,4 @@
+## 带懒标记线段树
 ```c++
 template<class Info, class Tag>
 struct LazySegmentTree {
@@ -162,11 +163,11 @@ Info operator+(const Info &a, const Info &b) {
 
 ```
 
+#### 技巧: 区间历史最值
 ```c++
-// 区间历史最值
 struct Tag {
-    ll t1 = 0, t2 = 0;
-    ll s1 = INT_MIN, s2 = INT_MIN;
+    i64 t1 = 0, t2 = 0;
+    i64 s1 = INT_MIN, s2 = INT_MIN;
 
     void apply_t(const Tag &t) & {
         if (s1 == INT_MIN) {
@@ -193,8 +194,8 @@ struct Tag {
 
 
 struct Info {
-    ll a1 = 0;  //区间最大值
-    ll a2 = 0;  //区间历史最大值
+    i64 a1 = 0;  //区间最大值
+    i64 a2 = 0;  //区间历史最大值
     void apply(const Tag &t) & {
         a2 = max(a2, a1 + t.t2);
         a1 += t.t1;
@@ -206,12 +207,12 @@ struct Info {
 };
 
 Info operator+(const Info &a, const Info &b) {
-    return {max(a.a1, b.a1), max(a.a2, b.a2)};
+    return {std::max(a.a1, b.a1), std::max(a.a2, b.a2)};
 }
 
 for (int i = 0; i < m; i++) {
     int op, l, r;
-    ll x;
+    i64 x;
     cin >> op >> l >> r;
     l--;
     if (op == 1) {  //区间最大值
@@ -228,11 +229,9 @@ for (int i = 0; i < m; i++) {
 }
 ```
 
+## 带懒标记动态开点权值线段树
 
 ```c++
-
-// 动态开点权值线段树区间修改区间查询
-
 struct Node {
     i64 v = inf, add = 0;
     Node *l = nullptr, *r = nullptr;
@@ -248,29 +247,26 @@ void pull(Node *&t) {  //区间求min
 }
 
 void make(Node *&p, int l, int r) { // 创建新节点时为其赋值, query是[l, r] 的值
-    p = new Node();
-    p->v = Query(l, r);
+    if (p == nullptr) {
+        p = new Node();
+        p->v = Query(l, r);
+    }
 }
 
 void Apply(Node *&t, int l, int r) {
     if (t->add) {
         int m = (l + r) / 2;
-        if (t->l == nullptr) {
-            make(t->l, l, m);
-        }
+        make(t->l, l, m);
         t->l->apply(t->add);
-        if (t->r == nullptr) {
-            make(t->r, m, r);
-        }
+        
+        make(t->r, m, r);
         t->r->apply(t->add);
         t->add = 0;
     }
 }
 
 void rangeApply(Node *&p, int l, int r, int x, int y, int v) {
-    if (p == nullptr) {
-        make(p, l, r);
-    }
+    make(p, l, r);
     if (l >= y || r <= x) {
         return ;
     }
