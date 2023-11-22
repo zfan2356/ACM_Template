@@ -1,60 +1,52 @@
+## Trie
+
 ```c++
-int son[N][26], cnt[N], idx;
-void insert(char *str){  // 插入字符串
-    int p = 0;
-    for (int i = 0; str[i]; i ++ ){
-        int u = str[i] - 'a';
-        if (!son[p][u]) son[p][u] = ++ idx;
-        p = son[p][u];
+template<char FIRST = 'a'>
+struct Trie {
+    static constexpr int ALPHABET_SIZE = 26;
+    std::vector<std::array<int, ALPHABET_SIZE>> trie;
+    std::vector<int> cnt;
+    int cur;
+
+    Trie() {}
+    Trie(int N_) {
+        cur = 0;
+        trie.assign(N_ * ALPHABET_SIZE, {});
+        cnt.assign(N_ * ALPHABET_SIZE, 0);
     }
-    cnt[p] ++ ;	//记录哪个节点处有一个字符串结束
-}
 
-int query(char *str){  // 查询字符串出现次数
-    int p = 0;
-    for (int i = 0; str[i]; i ++ ){
-        int u = str[i] - 'a';
-        if (!son[p][u]) return 0;
-        p = son[p][u];
-    }
-    return cnt[p];
-}
-
-
-//01trie
-int idx = 1;
-void insert(int x){  // 插入
-    int p = 1;
-    for (int i = 31; i >= 0; i -- ){
-        int u = x >> i & 1;
-        if (!son[p][u]) son[p][u] = ++ idx;
-        p = son[p][u];
-        cnt[p] ++ ;
-    }
-}
-
-int query(int x){  // 查询当前的数与x异或最大值是多少
-    int p = 1, res = 0;
-    for (int i = 31; i >= 0; i -- ){
-        int u = x >> i & 1;
-        if (son[p][!u] && cnt[son[p][!u]]) {
-            res = res * 2 + 1;
-            p = son[p][!u];
+    // 插入S串
+    void insert(std::string S) {
+        int p = 0;
+        for (auto c : S) {
+            int u = c - FIRST;
+            if (!trie[p][u]) {
+                trie[p][u] = ++cur;
+            }
+            p = trie[p][u];
         }
-        else {
-            p = son[p][u];
-            res *= 2;
-        }
+        cnt[p]++;
     }
-    return res;
-}
 
-void del(int x) {
-    int p = 1;
-    for(int i = 31; i >= 0; i -- ) {
-        int u = x >> i & 1;
-        p = son[p][u];
-        cnt[p] --;
+    // 查询S串出现的次数
+    int queryFrequency(std::string S) {
+        int p = 0;
+        for (auto c : S) {
+            int u = c - FIRST;
+            if (!trie[p][u]) {
+                return 0;
+            }
+            p = trie[p][u];
+        }
+        return p;
     }
-}
+};
+```
+
+### 说明
+1. 传入的参数为字符串最长的长度
+2. 如果字符串为大写字母, 可以传入'A'
+```c++
+Trie trie(MAX_LENGTH)
+Trie<'A'> trie(MAX_LENGTH)
 ```
