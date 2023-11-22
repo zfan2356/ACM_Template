@@ -1,37 +1,33 @@
 ```c++
 template<class T>
-std::vector<int> prefixFunction(T S) {
-    int n = S.size();
-    std::vector<int> P(n);
-    for (int i = 2, j = 0; i < n; i++) {
-        while (j && S[i] != S[j + 1]) {
-            j = P[j];
+struct KMP {
+    // 计算前缀函数, 其中S是以0开始的一个序列(可以不是字符串)
+    std::vector<int> prefixFunction(T S) {
+        int n = S.size();
+        std::vector<int> P(n);
+        for (int i = 1; i < n; i++) {
+            int j = P[i - 1];
+            while (j && S[i] != S[j]) {
+                j = P[j - 1];
+            }
+            j += (S[i] == S[j]);
+            P[i] = j;
         }
-        if (S[i] == S[j + 1]) {
-            j++;
-        }
-        P[i] = j;
+        return P;
     }
-    return P;
-}
 
-template<class T>
-std::vector<int> KMP(T Text, T Pattern) {
-    int n = Pattern.size() - 1, m = Text.size() - 1;
-    std::vector<int> P = prefixFunction(Pattern);
-    std::vector<int> Pos;
-    for (int i = 1, j = 0; i <= m; i++) {
-        while (j && Text[i] != Pattern[j + 1]) {
-            j = P[j];
+    // 计算Pattern序列在Text序列中的匹配次数, 返回位置的集合
+    std::vector<int> work(T Text, T Pattern) {
+        std::vector<int> Pos;
+        std::string Splicing = Pattern + "#" + Text;
+        int n = Text.size(), m = Pattern.size();
+        std::vector<int> prefix = prefixFunction(Splicing);
+        for (int i = m + 1; i <= n + m; i++) {
+            if (prefix[i] == m) {
+                Pos.push_back(i - 2 * m);
+            }
         }
-        if (Text[i] == Pattern[j + 1]) {
-            j++;
-        }
-        if (j == n) {
-            Pos.push_back(i);
-            j = P[j];
-        }
+        return Pos;
     }
-    return Pos;
-}
+};
 ```
