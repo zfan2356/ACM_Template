@@ -19,7 +19,6 @@ Node *modify(Node *t, int l, int r, int x, int val) {
         t->v = val;
         return t;
     }
-
     int m = (l + r) / 2;
     if (x < m) {
         t->l = modify(t->l, l, m, x, val);
@@ -80,11 +79,15 @@ void solve() {
         }
     }
 }
+```
 
+```c++
 /*
- * 权值主席树: 静态区间第k小
- */
+ 权值主席树: 静态区间第k小
+    其本质是可以实现静态查询一个区间内小于某个数的值有多少个
 
+其实权值线段树可以实现的操作, 如果套一个主席树, 就可以拓展到在线区间查询中使用
+ */
 
 struct Node {
     Node *l = nullptr;
