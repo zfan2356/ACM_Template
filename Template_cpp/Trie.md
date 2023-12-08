@@ -1,9 +1,9 @@
 ## Trie
 
 ```c++
-template<char FIRST = 'a'>
 struct Trie {
     static constexpr int ALPHABET_SIZE = 26;
+    static constexpr char FIRST = 'a';
     std::vector<std::array<int, ALPHABET_SIZE>> trie;
     std::vector<int> cnt;
     int cur;
@@ -11,19 +11,19 @@ struct Trie {
     Trie() {}
     Trie(int N_) {
         cur = 0;
-        trie.assign(N_ * ALPHABET_SIZE, {});
-        cnt.assign(N_ * ALPHABET_SIZE, 0);
+        trie.assign(N_, {});
+        cnt.assign(N_, 0);
     }
 
     // 插入S串
     void insert(std::string S) {
         int p = 0;
         for (auto c : S) {
-            int u = c - FIRST;
-            if (!trie[p][u]) {
-                trie[p][u] = ++cur;
+            int &q = trie[p][c - FIRST];
+            if (!q) {
+                q = ++cur;
             }
-            p = trie[p][u];
+            p = q;
         }
         cnt[p]++;
     }
@@ -32,21 +32,21 @@ struct Trie {
     int queryFrequency(std::string S) {
         int p = 0;
         for (auto c : S) {
-            int u = c - FIRST;
-            if (!trie[p][u]) {
+            int &q = trie[p][c - FIRST];
+            if (!q) {
                 return 0;
             }
-            p = trie[p][u];
+            p = q;
         }
-        return p;
+        return cnt[p];
     }
 };
 ```
 
 ### 说明
 1. 传入的参数为字符串最长的长度
-2. 如果字符串为大写字母, 可以传入'A'
+2. 如果字符串为大写字母, 别忘记修改`FIRST`常量
 ```c++
 Trie trie(MAX_LENGTH)
-Trie<'A'> trie(MAX_LENGTH)
 ```
+3. 实际较为灵活, 模板起不到太大的作用
