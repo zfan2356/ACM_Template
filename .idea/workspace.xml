@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="51f3fc87-9b32-4c8a-98b6-dbeda3a3b6dc" name="更改" comment="Euclid_like.md" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2YQqUY9WoEkZOSiRNXfCwhlNL1J" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "cpp__version",
+    "last_opened_file_path": "C:/Users/86150/Desktop/ACM_Template",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="51f3fc87-9b32-4c8a-98b6-dbeda3a3b6dc" name="更改" comment="" />
+      <created>1700468166527</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700468166527</updated>
+      <workItem from="1700468167551" duration="4963000" />
+      <workItem from="1700534570111" duration="5333000" />
+      <workItem from="1700648417851" duration="36000" />
+      <workItem from="1700648577678" duration="3119000" />
+      <workItem from="1700732458237" duration="594000" />
+      <workItem from="1700829035015" duration="2136000" />
+      <workItem from="1700836845255" duration="41000" />
+    </task>
+    <task id="LOCAL-00001" summary="BlockCutTree.md&#10;BSGS.md&#10;LazySegmentTree.md&#10;Pollard_rho.md&#10;SegmentTree.md&#10;StringHash.md">
+      <option name="closed" value="true" />
+      <created>1700493147916</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700493147916</updated>
+    </task>
+    <task id="LOCAL-00002" summary="BitTrie.md&#10;KMP.md&#10;Trie.md">
+      <option name="closed" value="true" />
+      <created>1700653749891</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700653749892</updated>
+    </task>
+    <task id="LOCAL-00003" summary="BitTrie.md&#10;KMP.md&#10;Trie.md">
+      <option name="closed" value="true" />
+      <created>1700653757598</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700653757598</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Euclid_like.md">
+      <option name="closed" value="true" />
+      <created>1700836737978</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700836737978</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="BlockCutTree.md&#10;BSGS.md&#10;LazySegmentTree.md&#10;Pollard_rho.md&#10;SegmentTree.md&#10;StringHash.md" />
+    <MESSAGE value="BitTrie.md&#10;KMP.md&#10;Trie.md" />
+    <MESSAGE value="Euclid_like.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Euclid_like.md" />
+  </component>
+</project>
