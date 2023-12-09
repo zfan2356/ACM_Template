@@ -142,3 +142,6 @@ func (c *Comb) perm(n int, m int) *Z {
 var Mod int = 1000000007
 
 ```
+
+### 说明
+自动取模类Z, 并且计算组合数
