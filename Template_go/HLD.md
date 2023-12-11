@@ -32,6 +32,9 @@ func (h *HLD) addEdge(u int, v int)  {
 
 func (h *HLD) dfs1(u int) {
     if h.parent[u] != -1 {
+        // go1.21 version
+        // idx := slices.Index(h.adj[u], h.parent[u])
+        // slices.Delete(h.adj[u], idx, idx + 1)
         idx := 0
         for i, v := range h.adj[u] {
             if v == h.parent[u] {
