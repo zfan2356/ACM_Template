@@ -255,8 +255,6 @@ struct Euclid {
 }E;
 ```
 
-#### 注意:
+#### 说明
 
-给定 $n,\,a,\,b,\,c$ ，分别求 
-$\sum\limits_{i=0}^{n}\lfloor \frac{ai+b}{c} \rfloor\,,\  \sum\limits_{i=0}^{n}{\lfloor \frac{ai+b}{c} \rfloor}^2\,,\  \sum\limits_{i=0}^{n}i\lfloor \frac{ai+b}{c} \rfloor$ 
-
+给定 $n,\,a,\,b,\,c$ ，分别求 $\sum\limits_{i=0}^{n}\lfloor \frac{ai+b}{c} \rfloor\,,\  \sum\limits_{i=0}^{n}{\lfloor \frac{ai+b}{c} \rfloor}^2\,,\  \sum\limits_{i=0}^{n}i\lfloor \frac{ai+b}{c} \rfloor$ ，答案对 $998244353$ 取模。
