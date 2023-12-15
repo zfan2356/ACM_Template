@@ -7,137 +7,137 @@ type LazySegmentTree struct {
 }
 
 // Init 初始化
-func (lst *LazySegmentTree) Init(_init *[]*Info) {
-    lst.n = len(*(_init))
+func (this *LazySegmentTree) Init(_init *[]*Info) {
+    this.n = len(*(_init))
 
-    M := bits.Len(uint(lst.n)) - 1
-    lst.info = make([]*Info, 4 << M)
-    lst.tag = make([]*Tag, 4 << M)
+    M := bits.Len(uint(this.n)) - 1
+    this.info = make([]*Info, 4 << M)
+    this.tag = make([]*Tag, 4 << M)
 
     for i := 0; i < (4 << M); i++ {
-        lst.info[i] = newInfo()
-        lst.tag[i] = newTag()
+        this.info[i] = newInfo()
+        this.tag[i] = newTag()
     }
 
     var build func(int, int, int)
     build = func(p int, l int, r int) {
         if r - l == 1 {
-            lst.info[p] = (*_init)[l]
+            this.info[p] = (*_init)[l]
             return
         }
         m := (l + r) / 2
         build(2 * p, l, m)
         build(2 * p + 1, m, r)
     }
-    build(1, 0, lst.n)
+    build(1, 0, this.n)
 }
 
-func (lst *LazySegmentTree) pull(p int)  {
-    lst.info[p] = lst.info[2 * p].merge(lst.info[2 * p + 1])
+func (this *LazySegmentTree) pull(p int)  {
+    this.info[p] = this.info[2 * p].merge(this.info[2 * p + 1])
 }
 
-func (lst *LazySegmentTree) apply(p int, t *Tag)  {
-    lst.info[p].apply(t)
-    lst.tag[p].apply(t)
+func (this *LazySegmentTree) apply(p int, t *Tag)  {
+    this.info[p].apply(t)
+    this.tag[p].apply(t)
 }
 
-func (lst *LazySegmentTree) push(p int)  {
-    lst.apply(2 * p, lst.tag[p])
-    lst.apply(2 * p + 1, lst.tag[p])
-    lst.tag[p] = newTag()
+func (this *LazySegmentTree) push(p int)  {
+    this.apply(2 * p, this.tag[p])
+    this.apply(2 * p + 1, this.tag[p])
+    this.tag[p] = newTag()
 }
 
 // 单点修改
-func (lst *LazySegmentTree) modify(p int, l int, r int, x int, v *Info)  {
+func (this *LazySegmentTree) modify(p int, l int, r int, x int, v *Info)  {
     if r - l == 1 {
-        lst.info[p] = v
+        this.info[p] = v
         return
     }
     m := (l + r) / 2
-    lst.push(p)
+    this.push(p)
     if x < m {
-        lst.modify(2 * p, l, m, x, v)
+        this.modify(2 * p, l, m, x, v)
     } else {
-        lst.modify(2 * p + 1, m, r, x, v)
+        this.modify(2 * p + 1, m, r, x, v)
     }
-    lst.pull(p)
+    this.pull(p)
 }
-func (lst *LazySegmentTree) Modify(x int, v *Info)  {
-    lst.modify(1, 0, lst.n, x, v)
+func (this *LazySegmentTree) Modify(x int, v *Info)  {
+    this.modify(1, 0, this.n, x, v)
 }
 
 // 区间查询
-func (lst *LazySegmentTree) rangeQuery(p int, l int, r int, x int, y int) *Info {
+func (this *LazySegmentTree) rangeQuery(p int, l int, r int, x int, y int) *Info {
     if l >= y || r <= x {
         return newInfo()
     }
     if l >= x && r <= y {
-        return lst.info[p]
+        return this.info[p]
     }
     m := (l + r) / 2
-    lst.push(p)
-    return lst.rangeQuery(2 * p, l, m, x, y).merge(lst.rangeQuery(2 * p + 1, m, r, x, y))
+    this.push(p)
+    return this.rangeQuery(2 * p, l, m, x, y).merge(this.rangeQuery(2 * p + 1, m, r, x, y))
 }
-func (lst *LazySegmentTree) RangeQuery(l int, r int) *Info {
-    return lst.rangeQuery(1, 0, lst.n, l, r)
+func (this *LazySegmentTree) RangeQuery(l int, r int) *Info {
+    return this.rangeQuery(1, 0, this.n, l, r)
 }
 
 // 区间修改
-func (lst *LazySegmentTree) rangeApply(p int, l int, r int, x int, y int, v *Tag)  {
+func (this *LazySegmentTree) rangeApply(p int, l int, r int, x int, y int, v *Tag)  {
     if l >= y || r <= x {
         return
     }
     if l >= x && r <= y {
-        lst.apply(p, v)
+        this.apply(p, v)
         return
     }
     m := (l + r) / 2
-    lst.push(p)
-    lst.rangeApply(2 * p, l, m, x, y, v)
-    lst.rangeApply(2 * p + 1, m, r, x, y, v)
-    lst.pull(p)
+    this.push(p)
+    this.rangeApply(2 * p, l, m, x, y, v)
+    this.rangeApply(2 * p + 1, m, r, x, y, v)
+    this.pull(p)
 }
-func (lst *LazySegmentTree) RangeApply(l int, r int, v *Tag)  {
-    lst.rangeApply(1, 0, lst.n, l, r, v)
+func (this *LazySegmentTree) RangeApply(l int, r int, v *Tag)  {
+    this.rangeApply(1, 0, this.n, l, r, v)
 }
 
 // 线段树上二分
 type F func(*Info)bool
-func (lst *LazySegmentTree) findFirst(p int, l int, r int, x int, y int, pred F) int {
-    if l >= y || r <= x || !pred(lst.info[p]) {
+func (this *LazySegmentTree) findFirst(p int, l int, r int, x int, y int, pred F) int {
+    if l >= y || r <= x || !pred(this.info[p]) {
         return -1
     }
     if r - l == 1 {
         return l
     }
     m := (l + r) / 2
-    lst.push(p)
-    res := lst.findFirst(2 * p, l, m, x, y, pred)
+    this.push(p)
+    res := this.findFirst(2 * p, l, m, x, y, pred)
     if res == -1 {
-        res = lst.findFirst(2 * p + 1, m, r, x, y, pred)
+        res = this.findFirst(2 * p + 1, m, r, x, y, pred)
     }
     return res
 }
-func (lst *LazySegmentTree) FindFirst(l int, r int, pred F) int {
-    return lst.findFirst(1, 0, lst.n, l, r, pred)
+func (this *LazySegmentTree) FindFirst(l int, r int, pred F) int {
+    return this.findFirst(1, 0, this.n, l, r, pred)
 }
-func (lst *LazySegmentTree) findLast(p int, l int, r int, x int, y int, pred F) int {
-    if l >= y || r <= x || !pred(lst.info[p]) {
+func (this *LazySegmentTree) findLast(p int, l int, r int, x int, y int, pred F) int {
+    if l >= y || r <= x || !pred(this.info[p]) {
         return -1
     }
     if r - l == 1 {
         return l
     }
     m := (l + r) / 2
-    lst.push(p)
-    res := lst.findLast(2 * p + 1, m, r, x, y, pred)
+    this.push(p)
+    res := this.findLast(2 * p + 1, m, r, x, y, pred)
     if res == -1 {
-        res = lst.findLast(2 * p, l, m, x, y, pred)
+        res = this.findLast(2 * p, l, m, x, y, pred)
     }
     return res
 }
-func (lst *LazySegmentTree) FindLast(l int, r int, pred F) int {
-    return lst.findLast(1, 0, lst.n, l, r, pred)
+func (this *LazySegmentTree) FindLast(l int, r int, pred F) int {
+    return this.findLast(1, 0, this.n, l, r, pred)
 }
 
 type Info struct {
