@@ -7,16 +7,13 @@ struct Fenwick {
     Fenwick(int n = 0) {
         init(n);
     }
-
     Fenwick(std::vector<T>& b) {
         init(b);
     }
-
     void init(int n) {
         this->n = n;
         a.assign(n, T());
     }
-
     void init(std::vector<T> &b) {
         this->n = b.size();
         a.assign(n, T());
@@ -34,7 +31,6 @@ struct Fenwick {
             a[i - 1] += v;
         }
     }
-
     T sum(int x) {
         auto ans = T();
         for (int i = x; i > 0; i -= i & -i) {
@@ -42,11 +38,10 @@ struct Fenwick {
         }
         return ans;
     }
-
     T rangeSum(int l, int r) {
         return sum(r) - sum(l);
     }
-
+    
     int kth(T k) {
         int x = 0;
         for (int i = 1 << std::__lg(n); i; i /= 2) {
