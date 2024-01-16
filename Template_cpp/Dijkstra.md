@@ -21,3 +21,4 @@ auto dijkstra = [&](int MAXN, int s) {
     return d;
 };
 ```
+
