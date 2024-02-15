@@ -1,8 +1,7 @@
 ```c++
-template<class T>
 struct KMP {
-    // 计算前缀函数, 其中S是以0开始的一个序列(可以不是字符串)
-    std::vector<int> prefixFunction(T S) {
+    // 计算前缀函数, 其中S是以0开始的一个string
+    std::vector<int> prefixFunction(std::string S) {
         int n = S.size();
         std::vector<int> P(n);
         for (int i = 1; i < n; i++) {
@@ -17,7 +16,7 @@ struct KMP {
     }
 
     // 计算Pattern序列在Text序列中的匹配次数, 返回位置的集合
-    std::vector<int> work(T Text, T Pattern) {
+    std::vector<int> work(std::string Text, std::string Pattern) {
         std::vector<int> Pos;
         std::string Splicing = Pattern + "#" + Text;
         int n = Text.size(), m = Pattern.size();
@@ -30,4 +29,17 @@ struct KMP {
         return Pos;
     }
 };
+```
+
+
+```c++
+for (int i = 0, j = 0; i < m; i++) {
+    while (j && s[i] != t[j]) {
+         j = ne[j - 1];
+        }
+        j += s[i] == t[j];
+        if (j == n) {
+            cout << i - n + 1 << ' ';
+        }
+    }
 ```

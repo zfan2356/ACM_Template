@@ -1,9 +1,11 @@
+## FHQTreap
+
 ```c++
 std::mt19937_64 rng(std::chrono::steady_clock::now().time_since_epoch().count());
 constexpr int inf = 1e9;
 
 template<typename T>
-struct Tree {
+struct FHQTreap {
     struct Node {
         Node *l;
         Node *r;

@@ -1,4 +1,5 @@
 ## 带懒标记线段树
+
 ```c++
 template<class Info, class Tag>
 struct LazySegmentTree {
@@ -16,7 +17,7 @@ struct LazySegmentTree {
     void init(int n_, Info v_ = Info()) {
         init(std::vector(n_, v_));
     }
-    
+  
     template<class T>
     void init(std::vector<T> init_) {
         n = init_.size();
@@ -46,7 +47,7 @@ struct LazySegmentTree {
         apply(2 * p + 1, tag[p]);
         tag[p] = Tag();
     }
-    
+  
     void modify(int p, int l, int r, int x, const Info &v) {
         if (r - l == 1) {
             info[p] = v;
@@ -64,7 +65,7 @@ struct LazySegmentTree {
     void modify(int p, const Info &v) {
         modify(1, 0, n, p, v);
     }
-    
+  
     Info rangeQuery(int p, int l, int r, int x, int y) {
         if (l >= y || r <= x) {
             return Info();
@@ -79,7 +80,7 @@ struct LazySegmentTree {
     Info rangeQuery(int l, int r) {
         return rangeQuery(1, 0, n, l, r);
     }
-    
+  
     void rangeApply(int p, int l, int r, int x, int y, const Tag &v) {
         if (l >= y || r <= x) {
             return;
@@ -97,7 +98,7 @@ struct LazySegmentTree {
     void rangeApply(int l, int r, const Tag &v) {
         return rangeApply(1, 0, n, l, r, v);
     }
-    
+  
     template<class F>
     int findFirst(int p, int l, int r, int x, int y, F pred) {
         if (l >= y || r <= x || !pred(info[p])) {
@@ -118,7 +119,7 @@ struct LazySegmentTree {
     int findFirst(int l, int r, F pred) {
         return findFirst(1, 0, n, l, r, pred);
     }
-    
+  
     template<class F>
     int findLast(int p, int l, int r, int x, int y, F pred) {
         if (l >= y || r <= x || !pred(info[p])) {
@@ -143,7 +144,6 @@ struct LazySegmentTree {
  
 struct Tag {
     long long add = 0;
-    
     void apply(const Tag &t) & {
         add += t.add;
     }
@@ -151,7 +151,6 @@ struct Tag {
  
 struct Info {
     long long mn = 1E18;
-    
     void apply(const Tag &t) & {
         mn += t.add;
     }
@@ -164,6 +163,7 @@ Info operator+(const Info &a, const Info &b) {
 ```
 
 #### 技巧: 区间历史最值
+
 ```c++
 struct Tag {
     i64 t1 = 0, t2 = 0;
@@ -258,7 +258,7 @@ void Apply(Node *&t, int l, int r) {
         int m = (l + r) / 2;
         make(t->l, l, m);
         t->l->apply(t->add);
-        
+      
         make(t->r, m, r);
         t->r->apply(t->add);
         t->add = 0;
